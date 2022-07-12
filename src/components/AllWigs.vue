@@ -16,43 +16,45 @@
   </ul> -->
   <body>
     <div v-if="wigs">
-    <div class="row">
-      <div class="col-md-4" v-for="wig in wigs" :key="wig.id">
-        <div class="wigCard">
-          <!-- <h1>Hover The Card</h1> -->
-          <div class="card-wrapper">
-            <div class="user-pic">
-              <img :src="wig.images" alt="" class="img-fluid" />
-            </div>
-            <!-- <div class="card-deatils"> -->
-            <div class="name">
-              <h3>{{ wig.name }}</h3>
-              <p>R{{ wig.price }}</p>
-            </div>
-            <div class="social-details">
-              <div class="post">
-                <h3>{{ wig.hair }}</h3>
-                <p>Posts</p>
+      <div class="row">
+        <div class="col-md-4" v-for="wig in wigs" :key="wig.id">
+          <div class="wigCard">
+            <!-- <h1>Hover The Card</h1> -->
+            <div class="card-wrapper">
+              <div class="user-pic">
+                <router-link :to="{name:'singleWig', params: {id: wig.id}}">
+                  <img :src="wig.images" alt="" class="img-fluid" />
+                </router-link>
               </div>
-              <div class="followers">
-                <h3>{{ wig.rating }}</h3>
-                <p>Followers</p>
+              <!-- <div class="card-deatils"> -->
+              <div class="name">
+                <h3>{{ wig.name }}</h3>
+                <p>R{{ wig.price }}</p>
               </div>
-              <div class="following">
-                <h3>{{ wig.lifespan }}</h3>
-                <p>Following</p>
+              <div class="social-details">
+                <div class="post">
+                  <h3>{{ wig.hair }}</h3>
+                  <p>Posts</p>
+                </div>
+                <div class="followers">
+                  <h3>{{ wig.rating }}</h3>
+                  <p>Followers</p>
+                </div>
+                <div class="following">
+                  <h3>{{ wig.lifespan }}</h3>
+                  <p>Following</p>
+                </div>
               </div>
-            </div>
-            <div class="card-btn">
-              <button type="button">Follow</button>
-              <button type="button">Message</button>
+              <div class="card-btn">
+                <button type="button">Follow</button>
+                <button type="button">Message</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div v-else>Loading...</div>
+    <div v-else>Loading...</div>
   </body>
 </template>
 <script>
