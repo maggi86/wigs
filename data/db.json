@@ -1,0 +1,13 @@
+
+{
+    "users": [
+        {
+            "id": 1,
+            "username":"maggie",
+             "email":"magiie@1222gmail.com",
+            "password":"password",
+             "password2":"password"
+        }
+    ]
+
+}
