@@ -17,7 +17,7 @@
   <body>
     <div v-if="wigs">
     <div class="row">
-      <div class="col-md-4" v-for="wig in wigs" :key="wig">
+      <div class="col-md-4" v-for="wig in wigs" :key="wig.id">
         <div class="wigCard">
           <!-- <h1>Hover The Card</h1> -->
           <div class="card-wrapper">
@@ -148,11 +148,11 @@ p {
 .name {
   text-align: center;
   position: relative;
-  top: 100px;
+  top: 85px;
   transition: 0.5s;
 }
 .card-wrapper:hover .name {
-  top: 200px;
+  top: 170px;
 }
 .social-details {
   position: relative;
@@ -167,7 +167,10 @@ p {
 .card-wrapper:hover .social-details {
   opacity: 1;
   position: relative;
-  top: 200px;
+  top: 170px;
+  text-align: center;
+
+  /* margin-right: 1; */
 }
 .card-btn {
   position: relative;
