@@ -15,7 +15,7 @@ export default createStore({
     setWigs(state, wigs) {
       state.wigs = wigs;
     },
-    deleteWig(id) {
+    deleteWig(context, id) {
       fetch(`http://localhost:3000/wigs/`+ id , {
         method: "DELETE",
       })
