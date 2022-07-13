@@ -30,8 +30,10 @@ export default createStore({
       fetch("http://localhost:3000/wigs", {
           method: "POST",
           body: JSON.stringify({
-            name: "foo",
-            rating: "1 star",
+            name: document.getElementById('add-Name').value,
+            price: document.getElementById('add-Price').value,
+            lifespan: document.getElementById('add-LifeSpan').value,
+            rating: document.getElementById('add-Rating').value,
           }),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
