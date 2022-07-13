@@ -1,10 +1,12 @@
 import { createStore } from 'vuex'
 import validationRegisterUserinput from '../validation/validationRegisteruser'
 import router from '@/router';
+import { ssrContextKey } from 'vue';
 
 export default createStore({
   state: {
-  user:[]
+  user:null,
+
   },
   getters: {
   },
@@ -15,47 +17,36 @@ export default createStore({
 
   },
   actions: {
-    registerUser(context, payload){
-      let user ={
-          username:payload.username,
-          email:payload.email,
-          password:payload.password,
-           password2:payload.password2,
-  };
-  console.log(user);
-  const {isInvalid,errors}= validationRegisterUserinput(user);
-  console.log(isInvalid)
+    login: async (context, payload) => {
+      const {email, password} = payload;
+      const response = await fetch(`  http://localhost:3000/users?email=${email}&password=${password}`)
+      const userData =await response.json();
+      context.commit("setUser",userData[0])
+      router.push("./home")
+    },
 
-  if(isInvalid){
-      payload.errors = errors;
-      console.log(payload.errors.username)
-  } else  {
-      payload.errors = {}
-      // store user in local Storage
-      // if(localStorage.users){
-      //    let isUsers=localStorage.users; 
-      //    payload.users=JSON.parse(isUsers);
-      // }
-      // payload.users.push(user);
-      // localStorage.setItem('users',JSON.stringify(user));
-      context.commit('setUser', user)
-      // payload.username="";
-      // payload.email="";
-      // payload.password="";
-      // payload.password2="";
-      router.push("./login");
-      
-    let login =await fetch(
-    `http://localhost:3000/users?email=${payload.email} password${payload.password}`
-  )
+    register: async (context,payload) => {
+      const {username,email,password} = payload;
+      let response = await fetch("  http://localhost:3000/users", {
+        method: "POST",
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password
+        }),
+        headers: { 'Content-type': 'application/json; charset=UTF-8',}
+      })
+      const userData =await response.json();
+      context.commit("setUser",userData)
+      console.log(userData);
+      router.push("./login")
 
-  }}
-
-
-  
+    }
   },
 
 
+  
   modules: {
   }
+
 })

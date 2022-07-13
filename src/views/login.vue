@@ -1,39 +1,53 @@
 <template>
-<h4>Login </h4>
-<form @submit.prevent="registerUser({username, email, password, password2, errors})">
-<input type="text" :class="`form-control ${errors.username !== ''  ? 'isInvalid' :''}`" placeholder="Please enter username " v-model="username">
-<div class="invalid">{{errors.username}}</div>
-<br>
-<input type="password"  :class="`form-control ${errors.password !== '' ? 'isInvalid' :''}`" placeholder="Please enter password" v-model="password">
-<div class="invalid">{{errors.password}}</div>
-<br>
+  <h4>Login</h4>
+  <form @submit.prevent="login">
+    <input type="text" placeholder="Please enter email " v-model="email" />
+    <br />
+    <input
+      type="password"
+      placeholder="Please enter password"
+      v-model="password"
+    />
+    <br />
 
-<br>
-<div>
-    <button class="btn form-control"> Login</button>
-</div>
-</form>
+    <br />
+    <div>
+      <button class="btn form-control">Login</button>
+    </div>
+  </form>
+  <div v-if="user">
+    Welcome {{user.username}}
+  </div>
+  <div v-else>
+    Error
+  </div>
+
 
 </template>
 
 <script>
-import validationLogin from '../validation/validationLogin';
-export default{
-    data(){
-        return{
-            username:"",
-            password:"",
-            errors:{}
-        };
+// import store from '../store'
+export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
     },
-    methods:{
-       
-
-          
-    }
-}
+  },
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    login() {
+      this.$store.dispatch("login", {
+        email: this.email,
+        password: this.password,
+      });
+    },
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

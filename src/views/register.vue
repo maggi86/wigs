@@ -1,22 +1,23 @@
 <template>
-<h4>Register Queen </h4>
-<form @submit.prevent="registerUser({username, email, password, password2, errors})">
-<input type="text" :class="`form-control ${errors.username !== ''  ? 'isInvalid' :''}`" placeholder="Please enter username " v-model="username">
-<div class="invalid">{{errors.username}}</div>
+<div class="container">
+<h2> Registration  to join the Wig Nation </h2>
+<form @submit.prevent="register({username, email, password, password2, errors})">
+<input type="text"  placeholder="Please enter username " v-model="username" size="50">
 <br>
-<input type="text"  :class="`form-control ${errors.email !== '' ? 'isInvalid' :''}`" placeholder="Please enter email" v-model="email">
+<input type="text"  :class="`form-control ${errors.email !== '' ? 'isInvalid' :''}`" placeholder="Please enter email" v-model="email" size="50" >
 <div class="invalid">{{errors.email}}</div>
 <br>
-<input type="password"  :class="`form-control ${errors.password !== '' ? 'isInvalid' :''}`" placeholder="Please enter password" v-model="password">
+<input type="password"  :class="`form-control ${errors.password !== '' ? 'isInvalid' :''}`" placeholder="Please enter password" v-model="password" size="50" >
 <div class="invalid">{{errors.password}}</div>
 <br>
-<input type="password" :class="`form-control ${errors.password2 !== ''  ? 'isInvalid' :''}`" placeholder="Please Confirm password" v-model="password2">
+<input type="password" :class="`form-control ${errors.password2 !== ''  ? 'isInvalid' :''}`" placeholder="Please Confirm password" v-model="password2" size="50" >
 <div class="invalid">{{errors.password2}}</div>
 <br>
 <div>
     <button class="btn form-control"> register</button>
 </div>
 </form>
+</div>
 </template>
 
 <script>
@@ -36,37 +37,10 @@ data() {
     },
     methods:{
         // store.dispatch()
-        ...mapActions(['registerUser'])
+        ...mapActions(['register'])
         // registerUser(){
-        //     let user ={
-        //         username:this.username,
-        //         email:this.email,
-        //         password:this.password,
-        //          password2:this.password2,
-        // };
-        // console.log(user);
-        // const {isInvalid,errors}= validationRegisterUserinput(user);
-        // console.log(isInvalid)
-
-        // if(isInvalid){
-        //     this.errors = errors;
-        //     console.log(this.errors.username)
-        // } else  {
-        //     this.errors = {}
-        //     // store user in local Storage
-        //     if(localStorage.users){
-        //        let isUsers=localStorage.users; 
-        //        this.users=JSON.parse(isUsers);
-        //     }
-        //     this.users.push(user);
-        //     localStorage.setItem('users',JSON.stringify(this.users));
-        //     this.username="";
-        //     this.email="";
-        //     this.password="";
-        //     this.password2="";
-        //     this.$router.push("./login");
-
-        // }
+ 
+  
     },
 
 }
@@ -78,5 +52,17 @@ data() {
 
 
 <style>
+.container{
+    box-shadow: 0  15px 30px rgb(02,12,12);
+    width: 430px;
+    height: 300px;
+    margin:auto;
+    padding: 20px;
+    margin-top:110px
+}
 
+.btn{
+    background-color: aqua;
+    size: 40px;
+}
 </style>

@@ -1,13 +1,130 @@
-
 {
-    "users": [
-        {
-            "id": 1,
-            "username":"maggie",
-             "email":"magiie@1222gmail.com",
-            "password":"password",
-             "password2":"password"
-        }
-    ]
-
+  "users": [
+    {
+      "id": 1,
+      "username": "maggie",
+      "email": "magiie@1222gmail.com",
+      "password": "password"
+    },
+    {
+      "username": "j",
+      "email": "j",
+      "password": "j",
+      "id": 2
+    },
+    {
+      "username": "3",
+      "email": "2",
+      "password": "2",
+      "id": 3
+    },
+    {
+      "username": "Shane",
+      "email": "shane@gmail.com",
+      "password": "Password",
+      "id": 4
+    },
+    {
+      "username": "maggie",
+      "email": "magiie@12gmail.com",
+      "password": "password",
+      "id": 5
+    },
+    {
+      "username": "maggie",
+      "email": "magiie@122gmail.com",
+      "password": "password",
+      "id": 6
+    },
+    {
+      "username": "km",
+      "email": "km",
+      "password": "km",
+      "id": 7
+    },
+    {
+      "username": "k",
+      "email": "k",
+      "password": "k",
+      "id": 8
+    },
+    {
+      "username": "k",
+      "email": "k",
+      "password": "k",
+      "id": 9
+    },
+    {
+      "username": "k",
+      "email": "k",
+      "password": "k",
+      "id": 10
+    },
+    {
+      "username": "k",
+      "email": "k",
+      "password": "k",
+      "id": 11
+    },
+    {
+      "username": "s",
+      "email": "s",
+      "password": "s",
+      "id": 12
+    },
+    {
+      "username": "s",
+      "email": "s",
+      "password": "s",
+      "id": 13
+    },
+    {
+      "username": "s",
+      "email": "s",
+      "password": "s",
+      "id": 14
+    },
+    {
+      "username": "s",
+      "email": "s",
+      "password": "s",
+      "id": 15
+    },
+    {
+      "username": "s",
+      "email": "s",
+      "password": "s",
+      "id": 16
+    },
+    {
+      "username": "s",
+      "email": "s",
+      "password": "s",
+      "id": 17
+    },
+    {
+      "username": "s",
+      "email": "s",
+      "password": "s",
+      "id": 18
+    },
+    {
+      "username": "michaela",
+      "email": "michaela",
+      "password": "a",
+      "id": 19
+    },
+    {
+      "username": "michaela",
+      "email": "michaela",
+      "password": "a",
+      "id": 20
+    },
+    {
+      "username": "m",
+      "email": "m",
+      "password": "m",
+      "id": 21
+    }
+  ]
 }
