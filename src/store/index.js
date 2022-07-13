@@ -1,12 +1,7 @@
 import {
   createStore
 } from "vuex";
-import validationRegisterUserinput from '../validation/validationRegisteruser'
 import router from '@/router';
-import { ssrContextKey } from 'vue';
-
-    
-    
     export default createStore({
       state: {
         user:null,
@@ -22,15 +17,6 @@ import { ssrContextKey } from 'vue';
   mutations: {
     setWigs(state, wigs) {
       state.wigs = wigs;
-    },
-    deleteWig(context, id) {
-      fetch(`http://localhost:3000/wigs/` + id, {
-          method: "DELETE",
-        })
-        .then(res => res.json())
-        .then(data => context.state.wigs = data)
-        .then(window.location.reload())
-      // .commit('removeWig',id)
     },
     addWig(context) {
       fetch("http://localhost:3000/wigs", {
@@ -71,7 +57,30 @@ import { ssrContextKey } from 'vue';
       context.commit("setUser",userData[0])
       router.push("/")
     },
-
+    deleteWig: async (context, id) => {
+      fetch(`http://localhost:3000/wigs/` + id, {
+          method: "DELETE",
+        })
+        .then(res => res.json())
+        .then(() => (context.dispatch('fetchAllWigs')))
+    },
+    addWig(context) {
+      fetch("http://localhost:3000/wigs", {
+          method: "POST",
+          body: JSON.stringify({
+            name: document.getElementById('add-Name').value,
+            price: document.getElementById('add-Price').value,
+            lifespan: document.getElementById('add-LifeSpan').value,
+            rating: document.getElementById('add-Rating').value,
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+        .then((response) => response.json())
+        .then((data) => (context.state.wigs = data))
+        .then(window.location.reload())
+    },
     register: async (context,payload) => {
       const {username,email,password} = payload;
       let response = await fetch("  http://localhost:3000/users", {
