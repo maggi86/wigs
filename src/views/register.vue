@@ -2,16 +2,16 @@
 <div class="container">
 <h2> Registration  to join the Wig Nation </h2>
 <form @submit.prevent="register({username, email, password, password2, errors})">
-<input type="text"  placeholder="Please enter username " v-model="username" size="50">
+<input type="text"  placeholder="Please enter username " v-model="username" >
 <br>
-<input type="text"  :class="`form-control ${errors.email !== '' ? 'isInvalid' :''}`" placeholder="Please enter email" v-model="email" size="50" >
-<div class="invalid">{{errors.email}}</div>
+<input type="text"   v-model="email" placeholder="please  enter email" >
+
 <br>
-<input type="password"  :class="`form-control ${errors.password !== '' ? 'isInvalid' :''}`" placeholder="Please enter password" v-model="password" size="50" >
-<div class="invalid">{{errors.password}}</div>
+<input type="password"   v-model="password" placeholder="please enter password" >
+
 <br>
-<input type="password" :class="`form-control ${errors.password2 !== ''  ? 'isInvalid' :''}`" placeholder="Please Confirm password" v-model="password2" size="50" >
-<div class="invalid">{{errors.password2}}</div>
+<input type="password" v-model="password2"  placeholder="please confirm password" >
+
 <br>
 <div>
     <button class="btn form-control"> register</button>
@@ -51,16 +51,29 @@ data() {
 </script>
 
 
-<style>
+<style scoped>
 .container{
     box-shadow: 0  15px 30px rgb(02,12,12);
-    width: 430px;
-    height: 300px;
-    margin:auto;
-    padding: 20px;
-    margin-top:110px
+background-color: aliceblue;
+    width:350px;
+    padding: 30px 40px;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    left:150%;
+    top:50%;
+    animation: show 3s linear forwards;
+
 }
 
+
+@keyframes show {
+    from {
+        left:150%;
+    }
+    to {
+        left:50%
+    }
+}
 .btn{
     background-color: aqua;
     size: 40px;

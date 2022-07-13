@@ -11,7 +11,10 @@
       </h2>
       <button class="btn btn-danger" @click="logout">Logout</button>
     </div>
-    <div v-else><router-link to="/login">Login</router-link> |</div>
+    <div v-else>
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/register">Register</router-link> |
+    </div>
   </nav>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
-  <h4>Login</h4>
-  <form @submit.prevent="login">
+<div id="popup">
+      <h4>Login</h4>
+ <form @submit.prevent="login">
     <input type="text" placeholder="Please enter email " v-model="email" />
     <br />
     <input
@@ -15,6 +16,9 @@
       <button class="btn form-control">Login</button>
     </div>
   </form>
+</div>
+
+ 
   <div v-if="user">
     Welcome {{user.username}}
   </div>
@@ -50,4 +54,32 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+
+#popup{
+    background-color: aliceblue;
+    width:450x;
+    padding: 30px 40px;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    left:-50%;
+    top:50%;
+    border-radius:8px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    animation: show 3s linear forwards;
+    z-index: 40;
+    /* display: none; */
+}
+
+
+@keyframes show {
+    from {
+        left:-50%;
+    }
+    to {
+        left:50%
+    }
+}
+
+</style>
