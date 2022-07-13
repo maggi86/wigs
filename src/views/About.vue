@@ -57,9 +57,10 @@
 
       <h1>Meet the team <hr></h1>
       
-            <div  class="card">
+        <div  class="card">
          <div class="circle-container">
-         </div>
+          <img class="pfp" src="../Wig-Images/Meagan(2).png" height="250px" width="250px" >
+        </div>
          <h2>Meagan Williams</h2>
          <h4>Manager</h4>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -69,7 +70,7 @@
           
       <div class="card">
          <div class="circle-container">
-            <h1 style="color:#fff;">M</h1>
+          <img class="pfp" src="../Wig-Images/Raees(1).png" height="250px" width="250px" >
          </div>
          <h2>Ra'ees Benny</h2>
          <h4>Assistant</h4>
@@ -80,18 +81,18 @@
           
       <div class="card">
          <div class="circle-container">
-            <h1 style="color:#fff;">R</h1>
+          <img class="pfp" src="../Wig-Images/Micheala(1).png" height="250px" width="250px" >
          </div>
-         <h2>Mekayle Ward</h2>
+         <h2>Micheala Ward</h2>
          <h4>Stylist</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
 
       <div class="card">
          <div class="circle-container">
-            <h1 style="color:#fff;">M</h1>
+          <img class="pfp" src="../Wig-Images/undecided-removebg-preview.png" height="250px" width="250px" >
          </div>
-         <h2>Ra'ees Benny</h2>
+         <h2>Liam Engel</h2>
          <h4>Assistant</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
@@ -137,6 +138,12 @@ export default {
 
 
 }
+
+.pfp{
+  border-radius: 50%;
+  
+}
+
 .container h1{
    font-size:50px
 }

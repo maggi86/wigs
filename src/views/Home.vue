@@ -7,12 +7,12 @@
       <p>Duty</p>
     </div>
 
-    <div>
+    <div class="sam" >
       <img
-        class="sam"
         src="../Wig-Images/WigNation-Logo-removebg-preview.png"
-        alt=""
+        height="470px" width="660px"
       />
+      <br>
       <button id="button">View Our products</button>
       <button id="button">About Us</button>
       
@@ -50,10 +50,10 @@ export default {
   padding: 0;
   background: 
       /* top, transparent red, faked with gradient */ linear-gradient(
-      rgba(224, 202, 130, 0.46),
+      rgba(57, 53, 53, 0.46),
       #a35203
     ),
-    /* bottom, image */ url(../Wig-Images/peakpx.jpg);
+    /* bottom, image */ url(../Wig-Images/anotherwallpaper.webp);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -110,10 +110,7 @@ p {
 } */
 
 .sam {
-  width: 600px;
-  height: 550px;
-  margin-top: auto;
-  margin-left: 400px;
-  display: flex;
+    margin-right: 13%;
+
 }
 </style>
