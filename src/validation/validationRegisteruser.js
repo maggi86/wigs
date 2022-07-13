@@ -4,6 +4,7 @@ import validator from "validator";
 const validationRegisterUserinput = (data) => {
     let errors= {};
     const {username, email, password, password2}= data;
+    
 
 
     if(validator.isEmpty(username)){
