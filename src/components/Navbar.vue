@@ -2,7 +2,7 @@
   <div class="navbar">
     <!-- <img src="./assets/logo.png" alt="" class="logo"> -->
     <router-link to="/" class="active">Home</router-link> |
-    <a href="#about"> About </a> |
+    <router-link to="/About" class="active">About</router-link> |
     <router-link to="/about">Products</router-link> |
     <router-link to="/about">Admin</router-link> |
     <router-link to="/about">Contact</router-link> |

@@ -1,118 +1,279 @@
 <template>
+  <div class="header">
 
-<div class="equal-height-container">
-  <div class="second">
+  </div>
+  <section class="allabt"> 
 
-    <div class="second-a">
-      <div class="content">
-        <h1 class="WWA">Who We are</h1> 
-        <p class="Para"> 
+      <div class="container">
+    <div class="about">
+      <div class="left">
+        <h1>About Us</h1>
+        <hr>
+        <p>
+          For twenty years now, I have dedicated my life to beauty, to discovering my inner beauty and making my inner self shine, and to help other people around me achieving the same.
+          I started as a fashion model when I still was a teenager, I became Miss Tourism Tanzania in 2007, and I was a finalist of MIss Tanzania one year later. This opened the door for me to the fashion and entertainment industry, and until today I have many, very good friends in the fashion industry.
+        </p>
 
-      For twenty years now, I have dedicated my life to beauty, to discovering my inner beauty and making my inner self shine, and to help other people around me achieving the same.
-      I started as a fashion model when I still was a teenager, I became Miss Tourism Tanzania in 2007, and I was a finalist of MIss Tanzania one year later. This opened the door for me to the fashion and entertainment industry, and until today I have many, very good friends in the fashion industry.
-      Then I went on the coach upcoming talents and new fashion models, and prepared them to be ready for the cat walk and the job.
-      For a time, I also had my own TV show about fashion in Tanzania.
-      After moving to Europe I started developing my own fashion and beauty brand which I launched on this website.
-      I invested a lot of time and money to get here. I travelled myself to India and China to understand and investigate supply chains, and I have very carefully and selectively picked my family owned suppliers to make sure that everybody along the supply chain benefits, but that I can also offer and guarantee you the highest product quality. All our items are carefully selected and double-checked for quality assurance.
-      All our products are hand made, and each item has to pass through my hands and will be prepared carefully before its is shipped to you. I want you to be happy. 
+        <p>
+          <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, ipsam. Mollitia hic autem ea provident dolor amet perferendis aperiam possimus ducimus, excepturi dolores aliquam rem porro. Nam aliquid placeat quo! -->
+        </p>
 
-      </p>
-        
       </div>
+
+      <div class="right">
+
+        <img src="../Wig-Images/hair-different-shades-human.jpg" alt="">
+
+      </div>
+      <div class="mission">
+
+        <div class="left">
+
+          <img src="../Wig-Images/wavw_wig.jpg" alt="">
+
+        </div>
+
+        <div class="right">
+
+          <h1> Our Products </h1>
+          <hr>
+
+          <p> 
+            After moving to Europe I started developing my own fashion and beauty brand which I launched on this website.
+            I invested a lot of time and money to get here. I travelled myself to India and China to understand and investigate supply chains, and I have very carefully and selectively picked my family owned suppliers to make sure that everybody along the supply chain benefits, but that I can also offer and guarantee you the highest product quality. All our items are carefully selected and double-checked for quality assurance.
+            All our products are hand made, and each item has to pass through my hands and will be prepared carefully before its is shipped to you. I want you to be happy.        
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+
     </div>
-    <div class="second-b">
-      <div class="first content">
-        <a href="design-and-manufacture/" class="content">Animation & Graphics</a>
+
+    <div class="team">
+
+      <h1>Meet the team <hr></h1>
+      
+            <div  class="card">
+         <div class="circle-container">
+         </div>
+         <h2>Meagan Williams</h2>
+         <h4>Manager</h4>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
+          
+          
+          
+      <div class="card">
+         <div class="circle-container">
+            <h1 style="color:#fff;">M</h1>
+         </div>
+         <h2>Ra'ees Benny</h2>
+         <h4>Assistant</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+          
+          
+          
+      <div class="card">
+         <div class="circle-container">
+            <h1 style="color:#fff;">R</h1>
+         </div>
+         <h2>Mekayle Ward</h2>
+         <h4>Stylist</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <div class="card">
+         <div class="circle-container">
+            <h1 style="color:#fff;">M</h1>
+         </div>
+         <h2>Ra'ees Benny</h2>
+         <h4>Assistant</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+          
 
     </div>
 
   </div>
 
-</div>
+  </section>
 
 </template>
 
+<script>
+export default {
 
-
+}
+</script>
 
 <style>
 
-.WWA{
-  display: contents;
-}
-
-.Para{
-  font-size: 18px;
-}
-
-* {
-  transition: all 0.5s ease;
-  font-family: 'Roboto', sans-serif;
-}
-.equal-height-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-}
-.second {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.second-a,
-.second-b {
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 100%;
-}
-.second-a {
-  flex: 1;
-        background: 
+.allabt{
+    background: 
       /* top, transparent red, faked with gradient */ linear-gradient(
-        rgba(224, 202, 130, 0.46),
-        #a35203
-      ),
-      /* bottom, image */ url(..//Wig-Images/White-BG.jpg);
-  height: 100%;
+      rgba(224, 202, 130, 0.46),
+      #a35203
+    ),
+    /* bottom, image */ url(../Wig-Images/peakpx.jpg);
 }
-.second-b {
-  flex: 1;
-  background-image: url("../Wig-Images/Dark-Hd-Wallpapers-1080p-Dark-Wallpaper-1080p-Background-.jpg");
-  height: 100%;
-}
-.second :hover {
-  flex-grow: 2;
-}
-.content {
-  font-size: 74px;
-  font-weight: bold;
-  width: 50%;
-  height: 100%;
-  color: white !important;
-  text-decoration: none;
-  box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.4);
-  text-align: center;
-}
-.second .content {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-}
-.first .content {
-  background: linear-gradient(to right, #00000094, #84001887);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-</style>
 
+.header{
+   width:100%;
+   height:500px;
+   opacity:;
+   background-color:rgb(255, 244, 30);
+   background-image:url('../Wig-Images/Ks8NpG_headerPage.jpg');
+   background-size:cover;
+   /* background-position:bottom; */
+}
+
+.container{
+   width:100%;
+
+
+}
+.container h1{
+   font-size:50px
+}
+
+
+.about{
+   padding:5% 0;
+   width:100%;
+   height:80%;
+   background: linear-gradient(
+      rgba(0, 42, 255, 0.46),
+      #a35203
+    ),
+}
+
+.about .left{
+   padding:2%;
+   width:50%;
+   display:inline-block;
+}
+
+.about .right{
+   width:50%;
+   display:inline-block;
+}
+.about .right img{
+   width:100%;
+   border-radius: 20px;
+}
+
+.about .left h1{
+   text-align:center;
+   color:#1e1efffc;
+   margin:0 0 10px 0;
+   text-shadow: 2px 2px #FF0000;
+}
+
+.about .left p{
+   font-size:1rem;
+   margin:40px auto;
+   width:80%
+}
+
+.mission{
+   padding:5% 0;
+   width:100%;
+   height:auto;
+   background : linear-gradient(
+      rgba(0, 42, 255, 0.46),
+      #a35203
+    ),;
+}
+.mission .right{
+   padding:2% 0;
+   width:50%;
+
+   display:inline-block;
+}
+.mission .left{
+
+   width:50%;
+
+   display:inline-block;
+}
+.mission .left img{
+   width:100%;
+  border-radius: 20px;
+}
+.mission .right h1{
+   text-align:center;
+   color:#1e1efffc;
+   margin:0 0 10px 0;
+   text-shadow: 2px 2px #FF0000;
+}
+
+.mission .right p{
+   font-size:1rem;
+   margin:40px auto;
+   width:80%
+}
+
+.team{
+   width:90%;
+   margin:auto;
+   padding:5%;
+
+}
+.team h1{
+   text-align:center;
+   margin:0 0 10px 0;
+   text-shadow: 2px 2px #FF0000;
+}
+
+.team .card{
+   position:relative;
+   min-width:20%;
+   height:auto;
+   background-color:#fff;
+   display:inline-block;
+   margin:40px;
+   box-shadow: 0 0 20px 2px rgba(0,0,0,0.5);
+   text-align:center;
+}
+.card .circle-container{
+   position:relative;
+   background-color:#579f79;
+   width:250px;
+   height:250px;
+   border-radius:50%;
+   margin:auto;
+   color:#fff;
+}
+.circle-container h1{
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   margin:0;
+   font-size:60px;
+}
+
+.team .card h2{
+   text-align:center;
+   margin:30px 0 0 0;
+}
+.team .card h4{
+   text-align:center;
+   margin:10px 0 0 0;
+}
+.team .card p{
+   width:250px;
+   margin:30px auto;
+   text-align:center;
+
+}
+
+
+</style>
 
 

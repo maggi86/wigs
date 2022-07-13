@@ -15,10 +15,12 @@
       />
       <button id="button">View Our products</button>
       <button id="button">About Us</button>
+      
     </div>
+
   </section>
 
-  <section class="about">
+  <section id="about">
     <About />
   </section>
 
@@ -108,7 +110,7 @@ p {
 } */
 
 .sam {
-  width: 500px;
+  width: 600px;
   height: 550px;
   margin-top: auto;
   margin-left: 400px;
