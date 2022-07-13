@@ -48,7 +48,6 @@
           <button type="button" id="closeBtn" data-bs-dismiss="modal">
             Close
           </button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           <button type="button" id="addWig-Btn" @click="$store.commit('addWig')">
             <i class="bi bi-plus-circle"></i>
             Add Wig
@@ -86,8 +85,12 @@
           <td>{{ wig["shipping time"] }}</td>
           <td>{{ wig.rating }}</td>
           <td>
-            <i
+            <!-- <i
               @click="$store.commit('deleteWig', wig.id)"
+              class="bi bi-trash-fill"
+            ></i> -->
+            <i
+              @click="$store.dispatch('deleteWig', wig.id)"
               class="bi bi-trash-fill"
             ></i>
           </td>
@@ -101,8 +104,6 @@
 export default {
   mounted() {
     this.$store.dispatch("fetchAllWigs");
-    // this.$store.commit('addWig')
-    // this.$store.commit('deleteWig')
   },
   computed: {
     wigs() {
@@ -113,7 +114,6 @@ export default {
 </script>
 <style scoped>
 body {
-  /* background: linear-gradient(100deg, rgba(63, 63, 63, 0.8) 0%, rgba(255, 255, 255, 0) 25%); */
   background: linear-gradient(
     100deg,
     yellow 0%,

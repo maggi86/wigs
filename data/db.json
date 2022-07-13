@@ -234,31 +234,5 @@
       "hair": "Synthetic Hair",
       "category": "unisex"
     }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "username": "maggie",
-      "email": "magiie@1222gmail.com",
-      "password": "password"
-    },
-    {
-      "username": "j",
-      "email": "j",
-      "password": "j",
-      "id": 2
-    },
-    {
-      "username": "3",
-      "email": "2",
-      "password": "2",
-      "id": 3
-    },
-    {
-      "username": "Shane",
-      "email": "shane@gmail.com",
-      "password": "Password",
-      "id": 4
-    }
   ]
 }
