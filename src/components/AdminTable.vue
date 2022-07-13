@@ -1,4 +1,29 @@
 <template>
+      <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Wig
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="closeBtn" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <button type="button" id="addWig-Btn"><i @click="$store.commit('addWig')" class="bi bi-plus-circle"></i> Add Wig</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <body>
     <table>
       <thead>
@@ -12,14 +37,13 @@
           <th>Wig Processing Time</th>
           <th>Wig Shipping Time</th>
           <th>Wig Rating</th>
-          <th>Edit</th>
           <th>Delete</th>
         </tr>
       </thead>
       <tbody v-if="wigs">
         <tr v-for="wig in wigs" :key="wig.id">
           <td>{{ wig.id }}</td>
-          <td><img :src="wig.images" alt="" width="200" height="200" /></td>
+          <td><img :src="wig.images" alt="" class="img-fuild"/></td>
           <td>{{ wig.name }}</td>
           <td>R {{ wig.price }}</td>
           <td>{{ wig.description }}</td>
@@ -27,7 +51,6 @@
           <td>{{ wig["processing time"] }}</td>
           <td>{{ wig["shipping time"] }}</td>
           <td>{{ wig.rating }}</td>
-          <td><i @click="$store.commit('addWig')" class="bi bi-pencil-square"></i></td>
           <td><i @click="$store.commit('deleteWig',wig.id)" class="bi bi-trash-fill"></i></td>
         </tr>
       </tbody>
@@ -60,6 +83,7 @@ body {
     green 75%,
     orange 100%
   );
+  width: 100vw;
 }
 table,
 th,
@@ -78,5 +102,15 @@ td {
 }
 img {
   border-radius: 30px;
+  width: 90%;
+  height: 90%;
+}
+#addWig-Btn{
+  border-radius: 30px;
+  font-size: 20px;
+}
+#closeBtn{
+  border-radius: 30px;
+  font-size: 20px;
 }
 </style>
