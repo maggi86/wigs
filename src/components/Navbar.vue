@@ -1,23 +1,17 @@
 <template>
   <nav class="navbar">
-    <!-- <img src="./assets/logo.png" alt="" class="logo"> -->
-   
-
-    <!-- <router-link to="/contact">Contact</router-link> | -->
     <div v-if="user">
-     <router-link to="/" class="active">Home</router-link> |
-    <router-link to="/About" class="active">About</router-link> |
-    <router-link to="/wigs">Products</router-link> |
-    <router-link to="/admin">Admin</router-link> |
- 
+      <router-link to="/" class="active">Home</router-link> |
+      <router-link to="/About" class="active">About</router-link> |
+      <router-link to="/wigs">Products</router-link> |
+      <router-link to="/contact">Contact</router-link> |
+      <router-link to="/admin">Admin</router-link> |
       <h2>
         {{ user.username }}
       </h2>
       <button class="btn btn-danger" @click="logout">Logout</button>
     </div>
-    <div v-else> 
-        <router-link to="/login">Login</router-link> |
-    </div>
+    <div v-else><router-link to="/login">Login</router-link> |</div>
   </nav>
 </template>
 
@@ -28,12 +22,6 @@ export default {
       return this.$store.state.user;
     },
   },
-  // methods: {
-  //   logout() {
-  //     this.$store.state.user = null;
-  //     // router.push("./");
-  //   },
-  // },
 };
 
 // When the user scrolls down 20px from the top of the document, slide down the navbar
@@ -66,7 +54,6 @@ function scrollFunction() {
 
 .navbar a {
   float: center;
-  /* position: static; */
   color: #f2f2f2;
   text-align: center;
   padding: 0 30px;

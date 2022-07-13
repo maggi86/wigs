@@ -18,23 +18,6 @@ import router from '@/router';
     setWigs(state, wigs) {
       state.wigs = wigs;
     },
-    addWig(context) {
-      fetch("http://localhost:3000/wigs", {
-          method: "POST",
-          body: JSON.stringify({
-            name: document.getElementById('add-Name').value,
-            price: document.getElementById('add-Price').value,
-            lifespan: document.getElementById('add-LifeSpan').value,
-            rating: document.getElementById('add-Rating').value,
-          }),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        })
-        .then((response) => response.json())
-        .then((data) => (context.state.wigs = data))
-        .then(window.location.reload())
-    },
     setUser (state, User){
       state.user = User;
     }
@@ -64,7 +47,7 @@ import router from '@/router';
         .then(res => res.json())
         .then(() => (context.dispatch('fetchAllWigs')))
     },
-    addWig(context) {
+    addWig: async (context) => {
       fetch("http://localhost:3000/wigs", {
           method: "POST",
           body: JSON.stringify({
@@ -78,8 +61,7 @@ import router from '@/router';
           },
         })
         .then((response) => response.json())
-        .then((data) => (context.state.wigs = data))
-        .then(window.location.reload())
+        .then(() => (context.dispatch("fetchAllWigs")))
     },
     register: async (context,payload) => {
       const {username,email,password} = payload;

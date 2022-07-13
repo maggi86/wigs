@@ -48,7 +48,7 @@
           <button type="button" id="closeBtn" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="button" id="addWig-Btn" @click="$store.commit('addWig')">
+          <button type="button" id="addWig-Btn" data-bs-dismiss="modal" @click="$store.dispatch('addWig')">
             <i class="bi bi-plus-circle"></i>
             Add Wig
           </button>
