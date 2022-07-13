@@ -1,4 +1,6 @@
-import { createStore } from "vuex";
+import {
+  createStore
+} from "vuex";
 
 export default createStore({
   state: {
@@ -16,28 +18,28 @@ export default createStore({
       state.wigs = wigs;
     },
     deleteWig(context, id) {
-      fetch(`http://localhost:3000/wigs/`+ id , {
-        method: "DELETE",
-      })
-        // .commit('removeWig',id)
+      fetch(`http://localhost:3000/wigs/` + id, {
+          method: "DELETE",
+        })
+        .then(res => res.json())
+        .then(data => context.state.wigs = data)
+      // .commit('removeWig',id)
     },
     addWig(context) {
-      fetch("http://localhost:3000/wigs/" ,{
-        method: "POST",
-        body: JSON.stringify({
-          name: "foo",
-          rating: "1 star",
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
+      fetch("http://localhost:3000/wigs", {
+          method: "POST",
+          body: JSON.stringify({
+            name: "foo",
+            rating: "1 star",
+          }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
         .then((response) => response.json())
-        .then((data) => (context.state.wigs = data));
+        .then((data) => (context.state.wigs = data))
+        .then(window.location.reload())
     }
-    // removeWig(state,id){
-    //   state.wigs = state.wigs.filter(wig => wig.id !== id)
-    // }
   },
   actions: {
     fetchAllWigs(context) {

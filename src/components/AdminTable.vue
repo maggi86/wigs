@@ -27,8 +27,8 @@
           <td>{{ wig["processing time"] }}</td>
           <td>{{ wig["shipping time"] }}</td>
           <td>{{ wig.rating }}</td>
-          <td><i @click="addWig" class="bi bi-pencil-square"></i></td>
-          <td><i @click="deleteWig(wig.id)" class="bi bi-trash-fill"></i></td>
+          <td><i @click="$store.commit('addWig')" class="bi bi-pencil-square"></i></td>
+          <td><i @click="$store.commit('deleteWig(wig.id)')" class="bi bi-trash-fill"></i></td>
         </tr>
       </tbody>
       <div v-else><h1>No data to display in Admin</h1></div>
@@ -39,8 +39,8 @@
 export default {
   mounted() {
     this.$store.dispatch("fetchAllWigs");
-    this.$store.commit('addWig')
-    this.$store.commit('deleteWig')
+    // this.$store.commit('addWig')
+    // this.$store.commit('deleteWig')
   },
   computed: {
     wigs() {
