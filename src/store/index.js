@@ -23,6 +23,7 @@ export default createStore({
         })
         .then(res => res.json())
         .then(data => context.state.wigs = data)
+        .then(window.location.reload())
       // .commit('removeWig',id)
     },
     addWig(context) {
