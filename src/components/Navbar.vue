@@ -5,12 +5,24 @@
     <router-link to="/About" class="active">About</router-link> |
     <router-link to="/wigs">Products</router-link> |
     <router-link to="/admin">Admin</router-link> |
+    <router-link to="/admin">Ad</router-link> |
     <!-- <router-link to="/contact">Contact</router-link> | -->
+  <div v-if="user">
+    <h2>
+      {{ user.username }}
+    </h2>
+  </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+};
 
 // When the user scrolls down 20px from the top of the document, slide down the navbar
 window.onscroll = function () {
