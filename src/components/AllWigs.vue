@@ -16,8 +16,8 @@
   </ul> -->
   <body>
     <div v-if="wigs">
-      <div class="row">
-        <div class="col-md-4" v-for="wig in wigs" :key="wig.id">
+      <div class="row" >
+        <div class="col-md-3" v-for="wig in wigs" :key="wig.id">
           <div class="wigCard">
             <!-- <h1>Hover The Card</h1> -->
             <div class="card-wrapper">
@@ -90,9 +90,10 @@ p {
 }
 .wigCard {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   height: 50vh;
   overflow: hidden;
 }
@@ -110,6 +111,7 @@ p {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   gap: 20px;
   transition: 0.5s;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
@@ -137,6 +139,7 @@ p {
   box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.35);
   overflow: hidden;
   transition: 0.5s;
+  
 }
 .user-pic img {
   margin-top: 55px;
@@ -146,6 +149,13 @@ p {
   border-radius: 30px;
   /* object-position: 100px 0 !important; */
   /* margin-left: -25%; */
+}
+.row{
+  /* display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  justify-content: center; */
+  margin-left: 4%;
 }
 .name {
   text-align: center;
