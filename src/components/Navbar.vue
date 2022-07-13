@@ -1,18 +1,24 @@
 <template>
-  <div class="navbar">
+  <nav class="navbar">
     <!-- <img src="./assets/logo.png" alt="" class="logo"> -->
-    <router-link to="/" class="active">Home</router-link> |
+   
+
+    <!-- <router-link to="/contact">Contact</router-link> | -->
+    <div v-if="user">
+     <router-link to="/" class="active">Home</router-link> |
     <router-link to="/About" class="active">About</router-link> |
     <router-link to="/wigs">Products</router-link> |
     <router-link to="/admin">Admin</router-link> |
-    <router-link to="/admin">Ad</router-link> |
-    <!-- <router-link to="/contact">Contact</router-link> | -->
-  <div v-if="user">
-    <h2>
-      {{ user.username }}
-    </h2>
-  </div>
-  </div>
+ 
+      <h2>
+        {{ user.username }}
+      </h2>
+      <button class="btn btn-danger" @click="logout">Logout</button>
+    </div>
+    <div v-else> 
+        <router-link to="/login">Login</router-link> |
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -22,6 +28,12 @@ export default {
       return this.$store.state.user;
     },
   },
+  // methods: {
+  //   logout() {
+  //     this.$store.state.user = null;
+  //     // router.push("./");
+  //   },
+  // },
 };
 
 // When the user scrolls down 20px from the top of the document, slide down the navbar

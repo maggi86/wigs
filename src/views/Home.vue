@@ -39,6 +39,11 @@ export default {
     About,
     About1,
   },
+  computed: {
+    user(){
+      return this.$store.state.user
+    }
+  }
 };
 </script>
 
