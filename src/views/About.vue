@@ -125,7 +125,7 @@ export default {
 .header{
    width:100%;
    height:500px;
-   opacity:;
+   /* opacity: ; */
    background-color:rgb(255, 244, 30);
    background-image:url('../Wig-Images/Ks8NpG_headerPage.jpg');
    background-size:cover;
