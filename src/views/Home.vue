@@ -1,12 +1,11 @@
 <template>
   <section class="home vh-100">
-    <div class="text-header">
-      <h1>Beauty is our</h1>
-      <p>Duty</p>
-    </div>
-
     <div class="logo">
       <img src="../Wig-Images/WigNation-Logo.png" />
+    </div>
+    <div class="text-header">
+      <p>Beauty is our</p>
+      <p>Duty</p>
     </div>
     <div id="link-btns">
       <router-link :to="{ name: 'Wigs' }">
@@ -51,15 +50,20 @@ export default {
       rgba(57, 53, 53, 0.46),
       #a35203
     ),
-    /* bottom, image */ url(../Wig-Images/anotherwallpaper.webp);
+    /* bottom, image */ 
+    
+    url(../Wig-Images/anotherwallpaper.webp);
+  background-position: center;
   background-size: cover;
+  background-repeat:no-repeat ;
   background-attachment: fixed;
 }
 .logo {
-  margin-right: 13%;
+  /* margin-right: 13%; */
+  position: relative;
 }
-.logo img{
-  margin-top: 5%;
+.logo img {
+  padding-top: 7%;
 }
 /* Button */
 #button {
@@ -76,7 +80,7 @@ export default {
   border-radius: 20px;
 }
 #link-btns {
-  margin: 150px 0 0 0;
+  margin: 100px 0 0 0;
 }
 #button:hover {
   background-color: #ffffff;
@@ -84,11 +88,15 @@ export default {
 }
 /* Heading  */
 .text-header {
-  float: right;
+  position: absolute;
+  /* float: right; */
   /* display: flex; */
-  margin-top: 120px;
-  margin-right: 70px;
+  /* margin-top: 120px; */
+  /* margin-right: 70px; */
   /* font-size: 90px; */
+  top: 380px;
+  left: 660px;
+  /* padding: 0 0 0 0; */
   color: rgb(255, 255, 255);
   font-family: "Acme", sans-serif;
 }
@@ -96,6 +104,7 @@ export default {
   color: black;
 }
 p {
+  font-size: 50px;
   color: black;
 }
 </style>
