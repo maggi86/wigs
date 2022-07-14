@@ -50,7 +50,6 @@
       <div class="team">
         <h1>
           Meet the team
-          <hr />
         </h1>
 
         <div class="card">
@@ -253,6 +252,7 @@ export default {};
   margin: 40px;
   box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
   text-align: center;
+  border-radius: 30px;
 }
 .card .circle-container {
   position: relative;

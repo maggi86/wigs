@@ -1,32 +1,25 @@
 <template>
-<div id="popup">
-      <h4>Login</h4>
- <form @submit.prevent="login">
-    <input type="text" placeholder="Please enter email " v-model="email" />
-    <br />
-    <input
-      type="password"
-      placeholder="Please enter password"
-      v-model="password"
-    />
-    <br />
+  <div id="popup">
+    <h4>Login</h4>
+    <form @submit.prevent="login">
+      <input type="text" placeholder="Please enter email " v-model="email" />
+      <br />
+      <input
+        type="password"
+        placeholder="Please enter password"
+        v-model="password"
+      />
+      <br />
 
-    <br />
-    <div>
-      <button class="btn form-control">Login</button>
-    </div>
-  </form>
-</div>
-
- 
-  <div v-if="user">
-    Welcome {{user.username}}
-  </div>
-  <div v-else>
-    Error
+      <br />
+      <div>
+        <button class="btn form-control">Login</button>
+      </div>
+    </form>
   </div>
 
-
+  <div v-if="user">Welcome {{ user.username }}</div>
+  <!-- <div v-else>Error</div> -->
 </template>
 
 <script>
@@ -55,31 +48,27 @@ export default {
 </script>
 
 <style>
-
-
-#popup{
-    background-color: aliceblue;
-    width:450x;
-    padding: 30px 40px;
-    position:absolute;
-    transform: translate(-50%,-50%);
-    left:-50%;
-    top:50%;
-    border-radius:8px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    animation: show 3s linear forwards;
-    z-index: 40;
-    /* display: none; */
+#popup {
+  background-color: aliceblue;
+  width: 450x;
+  padding: 30px 40px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: -50%;
+  top: 50%;
+  border-radius: 8px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  animation: show 3s linear forwards;
+  z-index: 40;
+  /* display: none; */
 }
-
 
 @keyframes show {
-    from {
-        left:-50%;
-    }
-    to {
-        left:50%
-    }
+  from {
+    left: -50%;
+  }
+  to {
+    left: 50%;
+  }
 }
-
 </style>

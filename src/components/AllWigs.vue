@@ -1,13 +1,16 @@
 <template>
   <body>
+    <h1>Click on Image to for more details</h1>
     <div v-if="wigs">
       <div class="row">
-        <div class="col-md-4" v-for="wig in wigs" :key="wig.id">
+        <div class="col-12 col-md-4" v-for="wig in wigs" :key="wig.id">
           <div class="wigCard">
             <!-- <h1>Hover The Card</h1> -->
             <div class="card-wrapper">
               <div class="user-pic">
-                <router-link :to="{name:'singleWig', params: {id: wig.id}}">
+                <router-link
+                  :to="{ name: 'singleWig', params: { id: wig.id } }"
+                >
                   <img :src="wig.images" alt="" class="img-fluid" />
                 </router-link>
               </div>
@@ -16,23 +19,19 @@
                 <h3>{{ wig.name }}</h3>
                 <p>R{{ wig.price }}</p>
               </div>
-              <div class="social-details">
-                <div class="post">
+              <div class="wig-details">
+                <div class="wig-hair">
                   <h3>{{ wig.hair }}</h3>
-                  <p>Posts</p>
+                  <p>Hair type</p>
                 </div>
-                <div class="followers">
+                <div class="wig-rating">
                   <h3>{{ wig.rating }}</h3>
-                  <p>Followers</p>
+                  <p>Rating</p>
                 </div>
-                <div class="following">
+                <div class="wig-lifespan">
                   <h3>{{ wig.lifespan }}</h3>
-                  <p>Following</p>
+                  <p>Life Span</p>
                 </div>
-              </div>
-              <div class="card-btn">
-                <button type="button">Follow</button>
-                <button type="button">Message</button>
               </div>
             </div>
           </div>
@@ -62,16 +61,22 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+/* .col-md-4{
+  margin: 100px 0 0 0;
+} */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: black;
+  background: linear-gradient(90deg, rgba(57, 53, 53, 0.46), #a35203);
+}
+h1 {
+  padding: 50px;
 }
 h3 {
   font-size: larger;
-  color: rgb(66, 66, 66);
+  color: black;
 }
 p {
-  color: rgb(136, 136, 136);
+  color: white;
 }
 .wigCard {
   display: flex;
@@ -91,11 +96,12 @@ p {
   position: relative;
   height: 180px;
   width: 300px;
-  background-color: #613613;
+  background: linear-gradient(100deg, rgba(57, 53, 53, 0.46), #a35203);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   transition: 0.5s;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 }
@@ -105,9 +111,10 @@ p {
   transition: 0.5s;
 }
 .card-wrapper:hover .user-pic {
-  height: 230px;
-  width: 220px;
-  transition: 0.5s;
+  margin-top: 50px;
+  height: 170px;
+  width: 160px;
+  transition: 0.8s;
 }
 .user-pic {
   position: absolute;
@@ -124,9 +131,9 @@ p {
   transition: 0.5s;
 }
 .user-pic img {
-  margin-top: 55px;
+  /* margin-top: 55px; */
   width: 100%;
-  height: 200px;
+  height: 100%;
   display: block;
   border-radius: 30px;
   /* object-position: 100px 0 !important; */
@@ -141,7 +148,7 @@ p {
 .card-wrapper:hover .name {
   top: 170px;
 }
-.social-details {
+.wig-details {
   position: relative;
   top: 100px;
   display: flex;
@@ -151,43 +158,11 @@ p {
   opacity: 0;
   transition: 0.5s;
 }
-.card-wrapper:hover .social-details {
+.card-wrapper:hover .wig-details {
   opacity: 1;
   position: relative;
   top: 170px;
   text-align: center;
-
   /* margin-right: 1; */
-}
-.card-btn {
-  position: relative;
-  top: 200px;
-  display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
-  padding: 0 50px;
-  opacity: 0;
-  transition: 0.1s;
-}
-.card-wrapper:hover .card-btn {
-  opacity: 1;
-  transition-delay: 0.3s;
-}
-.card-btn button {
-  width: 100px;
-  padding: 5px 10px;
-  font-size: medium;
-  font-family: "Poppins", sans-serif;
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid rgb(136, 136, 136);
-  color: rgb(136, 136, 136);
-  transition: 0.3s;
-}
-.card-btn button:hover {
-  color: white;
-  background-color: #c850c0;
-  transition: 0.3s;
-  border: 1px solid white;
 }
 </style>

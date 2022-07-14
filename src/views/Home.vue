@@ -70,20 +70,21 @@ export default {
   background-color: rgba(213, 181, 93, 0.888);
   border: #ffffff;
   color: rgb(255, 255, 255);
-  padding: 16px 30px;
+  padding: 10px 20px;
   text-align: center;
   font-size: 30px;
   font-family: "Acme", sans-serif;
   text-decoration: solid;
   margin-right: 13%;
-  transition: 0.3s;
+  transition: 0.8s;
   border-radius: 20px;
 }
 #link-btns {
-  margin: 100px 0 0 0;
+  margin: 100px 0px 0 100px;
 }
 #button:hover {
-  background-color: #ffffff;
+  transform: scale(1.1);
+  /* background-color: #ffffff; */
   color: rgb(0, 0, 0);
 }
 /* Heading  */

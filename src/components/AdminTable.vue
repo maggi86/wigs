@@ -1,5 +1,6 @@
 <template>
-  <!-- Button trigger modal -->
+  <div id="add-wig-btn">
+    <!-- Button trigger modal -->
   <button
     type="button"
     class="btn btn-primary"
@@ -8,6 +9,7 @@
   >
     Add Wig
   </button>
+  </div>
 
   <!-- Modal -->
   <div
@@ -118,17 +120,6 @@ export default {
 };
 </script>
 <style scoped>
-body {
-  background: linear-gradient(
-    100deg,
-    yellow 0%,
-    brown 25%,
-    purple 50%,
-    green 75%,
-    orange 100%
-  );
-  /* width: 100vw; */
-}
 table,
 th,
 td {
@@ -140,6 +131,19 @@ table {
   border: 2px solid black;
   border-collapse: collapse;
   color: white;
+  margin: 0 10px;
+  background: linear-gradient(
+    /* 100deg, */
+    100deg,
+    /* yellow 0%,
+    brown 25%,
+    purple 50%,
+    green 75%,
+    orange 100% */
+    rgba(57, 53, 53, 0.46),
+      #a35203
+  );
+  /* width: 100vw; */
 }
 td {
   padding: 10px;
@@ -177,9 +181,11 @@ img {
   }
   /* Hide table headers (but not display: none;, for accessibility) */
   thead tr {
-    position: absolute;
+    /* position: absolute;
     top: -9999px;
-    left: -9999px;
+    left: -9999px; */
+    top: 9px;
+    left: 9px;
   }
 
   tr {
@@ -204,5 +210,8 @@ img {
     padding-right: 10px;
     white-space: nowrap;
   }
+}
+#add-wig-btn{
+  margin: 40px 0 7px 0;
 }
 </style>
