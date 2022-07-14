@@ -31,24 +31,29 @@
         <div class="modal-body">
           <div>
             <label for="name">Name: </label>
-            <input type="name" maxlength="20" required id="add-Name"/>
+            <input type="name" maxlength="20" required id="add-Name" />
           </div>
           <div>
             <label for="price">Price: </label>
-            <input type="number" required id="add-Price"/>
+            <input type="number" required id="add-Price" />
           </div>
           <div>
             <label for="name">Life Span: </label>
-            <input type="text" required id="add-LifeSpan"/>
+            <input type="text" required id="add-LifeSpan" />
             <label for="name">Rating: </label>
-            <input type="number" required id="add-Rating"/>
+            <input type="number" required id="add-Rating" />
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" id="closeBtn" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="button" id="addWig-Btn" data-bs-dismiss="modal" @click="$store.dispatch('addWig')">
+          <button
+            type="button"
+            id="addWig-Btn"
+            data-bs-dismiss="modal"
+            @click="$store.dispatch('addWig')"
+          >
             <i class="bi bi-plus-circle"></i>
             Add Wig
           </button>

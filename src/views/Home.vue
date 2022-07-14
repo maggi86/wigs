@@ -1,5 +1,3 @@
-
-
 <template>
   <section class="home vh-100">
     <div class="text-header">
@@ -7,49 +5,44 @@
       <p>Duty</p>
     </div>
 
-    <div class="sam" >
-      <img
-        src="../Wig-Images/WigNation-Logo-removebg-preview.png"
-        height="470px" width="660px"
-      />
-      <br>
-      <button id="button">View Our products</button>
-      <button id="button">About Us</button>
-      
+    <div class="logo">
+      <img src="../Wig-Images/WigNation-Logo.png" />
     </div>
-
+    <div id="link-btns">
+      <router-link :to="{ name: 'Wigs' }">
+        <button id="button">View Our products</button>
+      </router-link>
+      <router-link :to="{ name: 'about' }">
+        <button id="button">About Us</button>
+      </router-link>
+    </div>
   </section>
 
-  <section id="about">
+  <!-- <section id="about">
     <About />
-  </section>
+  </section> -->
 
-  <Foot class="footer" />
+  <!-- <Foot class="footer" /> -->
 </template>
-
 
 <script>
 import Foot from "../components/Foot.vue";
-import About from "../views/About";
-import About1 from "./About.vue";
+// import About from "../views/About.vue";
 
 export default {
   components: {
-    Foot,
-    About,
-    About1,
+    // Foot,
+    // About,
   },
   computed: {
-    user(){
-      return this.$store.state.user
-    }
-  }
+    user() {
+      return this.$store.state.user;
+    },
+  },
 };
 </script>
 
-
-
-<style>
+<style scoped>
 .home {
   margin: 0;
   padding: 0;
@@ -62,7 +55,12 @@ export default {
   background-size: cover;
   background-attachment: fixed;
 }
-
+.logo {
+  margin-right: 13%;
+}
+.logo img{
+  margin-top: 5%;
+}
 /* Button */
 #button {
   background-color: rgba(213, 181, 93, 0.888);
@@ -77,18 +75,13 @@ export default {
   transition: 0.3s;
   border-radius: 20px;
 }
-
+#link-btns {
+  margin: 150px 0 0 0;
+}
 #button:hover {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
 }
-
-/* Footer */
-
-.footer {
-  bottom: 100%;
-}
-
 /* Heading  */
 .text-header {
   float: right;
@@ -104,18 +97,5 @@ export default {
 }
 p {
   color: black;
-}
-/* .text {
-  font-size: 1.1rem;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  width: 38%;
-  line-height: 1.5;
-  margin: 1.6rem 0;
-} */
-
-.sam {
-    margin-right: 13%;
-
 }
 </style>
