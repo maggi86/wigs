@@ -74,7 +74,7 @@ export default {
     // },
     wigs() {
       return this.$store.state.wigs?.filter(wigs=> {
-        let isMatch = true;
+        let isMatch = true; 
         if(!wigs.name?.toLowerCase().includes(this.search.toLowerCase())){
           isMatch = false;
         }

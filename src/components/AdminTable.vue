@@ -256,7 +256,6 @@ table,
 th,
 td {
   border: 1px solid black;
-
 }
 table {
   text-align: center;
