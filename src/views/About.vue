@@ -52,30 +52,28 @@
           Meet the team
         </h1>
 
+
         <div class="card">
           <div class="circle-container">
             <img
               class="pfp"
-              src="../Wig-Images/Meagan(2).png"
-              height="250px"
-              width="250px"
+              src="../Wig-Images/Liam.png"
             />
           </div>
-          <h2>Meagan Williams</h2>
-          <h4>Manager</h4>
+          <h2>Liam Engel</h2>
+          <h4>Assistant</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
             dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
 
+      
         <div class="card">
           <div class="circle-container">
             <img
               class="pfp Rpdf"
               src="../Wig-Images/Raees(2).png"
-              height="250px"
-              width="250px"
             />
           </div>
           <h2>Ra'ees Benny</h2>
@@ -91,8 +89,6 @@
             <img
               class="pfp"
               src="../Wig-Images/Micheala(1).png"
-              height="250px"
-              width="250px"
             />
           </div>
           <h2>Micheala Ward</h2>
@@ -107,13 +103,11 @@
           <div class="circle-container">
             <img
               class="pfp"
-              src="../Wig-Images/Liam.png"
-              height="250px"
-              width="250px"
+              src="../Wig-Images/Meagan(2).png"
             />
           </div>
-          <h2>Liam Engel</h2>
-          <h4>Assistant</h4>
+          <h2>Meagan Williams</h2>
+          <h4>Manager</h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
             dolor sit amet, consectetur adipiscing elit.
@@ -270,6 +264,10 @@ export default {};
   transform: translate(-50%, -50%);
   margin: 0;
   font-size: 60px;
+}
+.circle-container img{
+  height: 250px;
+  width: 250px;
 }
 
 .team .card h2 {

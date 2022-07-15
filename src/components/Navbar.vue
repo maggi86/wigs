@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <!-- <nav class="navbar">
     <div v-if="user">
       <router-link to="/" class="active">Home</router-link> |
       <router-link to="/About" class="active">About</router-link> |
@@ -14,6 +14,45 @@
     <div v-else>
       <router-link to="/login">Login</router-link> |
       <router-link to="/register">Register</router-link> |
+    </div>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/" class="nav-link active">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/About" class="nav-link active">About</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/wigs" class="nav-link active"
+              >Products</router-link
+            >
+          </li>
+          <li class="nav-item">
+            <router-link to="/contact" class="nav-link active"
+              >Contact</router-link
+            >
+          </li>
+          <li class="nav-item">
+            <router-link to="/admin" class="nav-link active">Admin</router-link>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
@@ -43,10 +82,8 @@ function scrollFunction() {
 
 <style scoped>
 .navbar {
-  overflow: hidden;
-  background-color: #333;
-  opacity: 70%;
-  position: fixed;
+  background-color: rgb(255, 225, 225);
+  opacity: 80%;
   top: 0;
   width: 100%;
   height: 35px;
@@ -66,9 +103,9 @@ function scrollFunction() {
   transition: transform 0.5s;
 }
 
-.navbar a:hover {
+ .navbar a:hover {
   transform: scale(1.3);
   text-decoration: underline;
   text-decoration-color: #00ffff;
-}
+} 
 </style>
