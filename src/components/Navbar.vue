@@ -16,8 +16,8 @@
       <router-link to="/register">Register</router-link> |
     </div>
   </nav> -->
-
-  <nav class="navbar navbar-expand-lg">
+  <div v-if="user">
+  <div class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <button
         class="navbar-toggler"
@@ -54,7 +54,16 @@
         </ul>
       </div>
     </div>
-  </nav>
+    </div>
+  <button class="btn btn-danger" @click="logout">Logout</button>
+    </div>
+    <div v-else>
+      <ul class="">
+        <li><router-link to="/login" class="nav-link active">Login</router-link></li>
+       
+      <li><router-link to="/register" class="nav-link active">Register</router-link></li>
+      </ul>
+    </div>
 </template>
 
 <script>
@@ -64,6 +73,11 @@ export default {
       return this.$store.state.user;
     },
   },
+  methods: {
+    logout() {
+      this.$store.dispatch('logout')
+    }
+  }
 };
 
 // When the user scrolls down 20px from the top of the document, slide down the navbar
@@ -108,4 +122,17 @@ function scrollFunction() {
   text-decoration: underline;
   text-decoration-color: #00ffff;
 } 
+
+ul{
+  display: flex;  
+  justify-content: center;
+  background-color: rgba(227, 207, 155, 0.888);
+  margin-bottom: 0;
+  height: 70px;
+  align-items: center;
+}
+ul li{
+  list-style: none;
+  padding: 0 30px;
+}
 </style>

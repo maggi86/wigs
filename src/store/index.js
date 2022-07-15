@@ -7,6 +7,7 @@ import router from '@/router';
         user:null,
         wigs: null,
         wig: {},
+        
 
   },
   getters: {
@@ -20,9 +21,14 @@ import router from '@/router';
     },
     setUser (state, User){
       state.user = User;
-    }
+    },
+    
   },
   actions: {
+    logout: async(context) => {
+      context.commit('setUser', null)
+      router.push('/')
+    },
     fetchAllWigs(context) {
       fetch("http://localhost:3000/wigs")
         .then((res) => res.json())

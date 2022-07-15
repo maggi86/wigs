@@ -15,6 +15,8 @@
   align-items: center;
   color: rgb(0, 0, 0);
   text-align: center;
+  position: relative;
+  bottom: 0;
 }
 #footer p{
   background-color: rgba(213, 181, 93, 0.888);

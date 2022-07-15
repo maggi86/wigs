@@ -59,7 +59,7 @@ body{
     /* bottom, image */ 
     url(../Wig-Images/peakpx.jpg);
     background-size: cover;
-  background-repeat:no-repeat ;
+  background-repeat:no-repeat ; 
   
 }
 #popup {
