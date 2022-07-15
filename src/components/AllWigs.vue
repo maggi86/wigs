@@ -1,6 +1,15 @@
 <template>
   <body>
-    <h1>Click on Image to for more details</h1>
+    <h1>Click on Image for more details</h1>
+    <button @click="sortPrice">
+    sort by price
+    </button>
+    <input type="text" id="" v-model="search" placeholder="Search....">
+    <select name="" id="" v-model="rating">
+      <option value="All">All</option>
+      <option value="5 stars">5</option>
+      <option value="4 stars">4</option>
+    </select>
     <div v-if="wigs">
       <div class="row">
         <div class="col-12 col-md-4" v-for="wig in wigs" :key="wig.id">
@@ -17,20 +26,20 @@
               <!-- <div class="card-deatils"> -->
               <div class="name">
                 <h3>{{ wig.name }}</h3>
-                <p>R{{ wig.price }}</p>
+                <h4>R {{ wig.price }}</h4>
               </div>
               <div class="wig-details">
                 <div class="wig-hair">
-                  <h3>{{ wig.hair }}</h3>
                   <p>Hair type</p>
+                  <h3>{{ wig.hair }}</h3>
                 </div>
                 <div class="wig-rating">
-                  <h3>{{ wig.rating }}</h3>
                   <p>Rating</p>
+                  <h3>{{ wig.rating }}</h3>
                 </div>
                 <div class="wig-lifespan">
-                  <h3>{{ wig.lifespan }}</h3>
                   <p>Life Span</p>
+                  <h3>{{ wig.lifespan }}</h3>
                 </div>
               </div>
             </div>
@@ -43,13 +52,37 @@
 </template>
 <script>
 export default {
+  data(){
+    return{
+      search: "",
+      rating:'All'
+    }
+  },
   mounted() {
     this.$store.dispatch("fetchAllWigs");
   },
-  computed: {
-    wigs() {
-      return this.$store.state.wigs;
+  methods:{
+      sortPrice(){
+    this.$store.commit("sortPrice");
+      }
     },
+  computed: {
+    // wigs() {
+    //   return this.$store.state.wigs;
+    // },
+    wigs() {
+      return this.$store.state.wigs?.filter(wigs=> {
+        let isMatch = true;
+        if(!wigs.name?.toLowerCase().includes(this.search.toLowerCase())){
+          isMatch = false;
+        }
+        if(this.rating !== "All" && this.rating !== wigs.rating){
+          isMatch = false;
+        }
+        return isMatch;
+      });
+    },
+
   },
 };
 </script>
@@ -73,10 +106,18 @@ h1 {
 }
 h3 {
   font-size: larger;
-  color: black;
+  /* color: black; */
+  color: white;
+    text-decoration: underline; 
+}
+h4 {
+  font-size: larger;
+  /* color: black; */
+  color: white;
 }
 p {
   color: white;
+  text-decoration: underline; 
 }
 .wigCard {
   display: flex;

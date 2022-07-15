@@ -61,7 +61,7 @@
 
  <!-- Left side -->
  <aside id="wig-logo">
-  <img src="../assets/WigNation-Logo.png" alt="" width="700" height="500">
+  <img src="../assets/WigNation-Logo.png" alt="">
  </aside>
 </template>
 
@@ -87,7 +87,11 @@ export default {
 }
 #wig-logo{
   float: right;
-  margin-right:3%;
+  /* margin-right:3%; */
+}
+#wig-logo img{
+  height: 700px;
+  width: 700px;
 }
 #contact-form{
   float: left;

@@ -10,6 +10,15 @@
     Add Wig
   </button>
   </div>
+  <button @click="sortPrice">
+    sort by price
+    </button>
+    <input type="text" id="" v-model="search" placeholder="Search....">
+    <select name="" id="" v-model="rating">
+      <option value="All">All</option>
+      <option value="5 stars">5</option>
+      <option value="4 stars">4</option>
+    </select>
 
   <!-- Modal -->
   <div
@@ -109,13 +118,32 @@
 </template>
 <script>
 export default {
+  data(){
+    return{
+      search: "",
+      rating:'All'
+    }
+  },
   mounted() {
     this.$store.dispatch("fetchAllWigs");
   },
   computed: {
+    // wigs() {
+    //   return this.$store.state.wigs;
+    // },
     wigs() {
-      return this.$store.state.wigs;
+      return this.$store.state.wigs?.filter(wigs=> {
+        let isMatch = true;
+        if(!wigs.name?.toLowerCase().includes(this.search.toLowerCase())){
+          isMatch = false;
+        }
+        if(this.rating !== "All" && this.rating !== wigs.rating){
+          isMatch = false;
+        }
+        return isMatch;
+      });
     },
+
   },
 };
 </script>
