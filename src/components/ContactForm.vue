@@ -83,8 +83,8 @@ export default {
   margin: 0 10px;
 }
 #wig-logo img{
-  height: 700px;
-  width: 700px;
+  height: 200px;
+  width: 200px;
 }
 #contact-form{
   text-align: center;
