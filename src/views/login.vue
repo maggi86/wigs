@@ -1,4 +1,5 @@
 <template>
+<body>
   <div id="popup">
     <h4>Login</h4>
     <form @submit.prevent="login">
@@ -20,6 +21,7 @@
 
   <div v-if="user">Welcome {{ user.username }}</div>
   <!-- <div v-else>Error</div> -->
+  </body>
 </template>
 
 <script>
@@ -48,6 +50,18 @@ export default {
 </script>
 
 <style>
+body{
+  background: 
+      linear-gradient(
+      rgba(224, 202, 130, 0.46),
+      #a35203
+    ),
+    /* bottom, image */ 
+    url(../Wig-Images/peakpx.jpg);
+    background-size: cover;
+  background-repeat:no-repeat ;
+  
+}
 #popup {
   background-color: aliceblue;
   width: 450x;

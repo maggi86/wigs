@@ -1,11 +1,14 @@
 <template>
+<div class="">
   <div id="navbar">
-    <Navbar/>
-  </div>
-  <router-view />
-  <v-footer app bottom fixed padless id="footer">
-  <Foot/>
-  </v-footer>
+  <Navbar/>
+</div>
+<router-view />
+<v-footer app bottom fixed padless id="footer">
+<Foot/>
+</v-footer>
+
+</div>
 </template>
 
 <script>

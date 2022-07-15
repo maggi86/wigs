@@ -1,11 +1,11 @@
 <template>
-  <section class="home vh-100">
+  <div class="">
+    <section class="home vh-100">
     <div class="logo">
       <img src="../Wig-Images/WigNation-Logo.png" />
-    </div>
-    <div class="text-header">
-      <p>Beauty is our</p>
-      <p>Duty</p>
+      <div class="text-header">
+        <p>Beauty is our <span class="sub-heading">Duty</span></p>
+      </div>
     </div>
     <div id="link-btns">
       <router-link :to="{ name: 'Wigs' }">
@@ -16,6 +16,7 @@
       </router-link>
     </div>
   </section>
+  </div>
 
   <!-- <section id="about">
     <About />
@@ -42,6 +43,10 @@ export default {
 </script>
 
 <style scoped>
+.container-fluid{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 .home {
   margin: 0;
   padding: 0;
@@ -52,7 +57,7 @@ export default {
     ),
     /* bottom, image */ 
     
-    url(../Wig-Images/anotherwallpaper.webp);
+    url(../assets/backgorund.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat:no-repeat ;
@@ -96,7 +101,7 @@ export default {
   /* margin-right: 70px; */
   /* font-size: 90px; */
   top: 380px;
-  left: 660px;
+  left: 550px;
   /* padding: 0 0 0 0; */
   color: rgb(255, 255, 255);
   font-family: "Acme", sans-serif;
@@ -108,4 +113,30 @@ p {
   font-size: 50px;
   color: black;
 }
+
+/* Media Query */
+@media only screen and (max-width: 540px) {
+  .text-header {
+    display: flex;
+    left: 32vh;
+    font-size: 20px;
+  }
+  p{
+    margin-right: 40%;
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 930px) {
+  .text-header {
+    display: flex;
+    left: 32vh;
+    font-size: 20px;
+  }
+  p{
+    margin-right: 40%;
+    font-size: 30px;
+  }
+}
+
+
 </style>
