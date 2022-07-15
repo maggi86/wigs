@@ -1,7 +1,9 @@
 <template>
 <!-- Right side -->
- <aside id="contact-form">
+ <div id="contact-form">
     <h1>Contact us for your wigs</h1>
+  <img src="../assets/WigNation-Logo.png" alt="" id="wig-logo">
+
 
   <form action="https://formspree.io/f/moqrywdp" method="POST">
     <div id="Name-Email">
@@ -57,12 +59,7 @@
     <p>Gender: {{ gender }}</p>
     <p>Terms and Conditions: {{ terms }}</p>
   </div>
- </aside>
-
- <!-- Left side -->
- <aside id="wig-logo">
-  <img src="../assets/WigNation-Logo.png" alt="" width="700" height="500">
- </aside>
+ </div>
 </template>
 
 <script>
@@ -85,12 +82,11 @@ export default {
 #Name-Email input{
   margin: 0 10px;
 }
-#wig-logo{
-  float: right;
-  margin-right:3%;
+#wig-logo img{
+  height: 700px;
+  width: 700px;
 }
 #contact-form{
-  float: left;
   text-align: center;
   margin-left:15% ;
 }

@@ -7,7 +7,7 @@ import router from '@/router';
         user:null,
         wigs: null,
         wig: {},
-        
+        asc: true,
 
   },
   getters: {
@@ -22,7 +22,15 @@ import router from '@/router';
     setUser (state, User){
       state.user = User;
     },
-    
+    sortPrice:(state) => {
+      state.wigs.sort((a,b)=>{
+        return a.price - b.price;
+      });
+      if(!state.asc){
+        state.wigs.reverse()
+      }
+      state.asc = !state.asc;
+    }
   },
   actions: {
     logout: async(context) => {

@@ -1,9 +1,14 @@
 <template>
   <footer id="footer">
-    <p>c year wignation copyright</p>
+    <div id="copyright-year"></div>
+    <!-- <p>c year wignation copyright</p> -->
   </footer>
 </template>
+<!-- <script>
+const currentYear = new Date().getFullYear();
 
+document.getElementById("footer").innerHTML = `<p>&copy ${currentYear} copyright WigNation</p>`;
+</script> -->
 <style scoped>
 #footer {
   background-color: rgba(213, 181, 93, 0.888);
@@ -18,7 +23,7 @@
   position: relative;
   bottom: 0;
 }
-#footer p{
+#footer p {
   background-color: rgba(213, 181, 93, 0.888);
 }
 </style>
