@@ -1,68 +1,68 @@
 <template>
-<!-- Right side -->
- <div id="contact-form">
+  <!-- Right side -->
+  <div id="contact-form">
     <h1>Contact us for your wigs</h1>
-  <img src="../assets/WigNation-Logo.png" alt="" id="wig-logo">
-
-
-  <form action="https://formspree.io/f/moqrywdp" method="POST">
-    <div id="Name-Email">
-        <label for="name">Name:</label>
-      <input
-        type="name"
-        name="name"
-        id="form-name"
-        v-model="name"
-        placeholder="Steve"
-        required
-      />
-        <label for="email">Email:</label>
-      <input
-        type="email"
-        name="email"
-        id="form-email"
-        v-model="email"
-        placeholder="eg@gmial"
-        required
-      />
-    </div>
-    <div>
-      <label for="password">Password:</label>
-    <input
-      type="password"
-      name="password"
-      id="form-password"
-      v-model="password"
-      placeholder="1234abcd"
-      maxlength="20"
-      required
+    <img
+      src="../assets/WigNation-Logo.png"
+      class="image"
+      alt=""
+      id="wig-logo"
     />
 
-    <label for="gender">Gender</label>
-    <select name="Gender" id="unisex" v-model="gender">
-        <option value="All">All</option>
-        <option value="Female">Female</option>
-        <option value="Male">Male</option>
-    </select>
-    </div>
+    <form action="https://formspree.io/f/moqrywdp" method="POST" id="Form-edit" target="_blank">
+      <div id="Name-Email">
+        <div class="form-group" id="mes-area">
+          <label for="exampleFormControlInput1">Name:</label>
+          <input
+            type="name"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Enter your Name"
+            required maxlength="20"
+          />
+        </div>
+        <div class="form-group" id="mes-area">
+          <label for="exampleFormControlInput1">Email address:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <div class="form-group" id="mes-area">
+          <label for="exampleFormControlTextarea1">Message WigNation</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
 
-    <div class="terms">
-        <input type="checkbox" required v-model="terms">
+        <label for="gender">Gender</label>
+        <select name="Gender" id="unisex" v-model="gender">
+          <option value="All">All</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+      </div>
+
+      <div class="terms">
+        <input type="checkbox" required v-model="terms" />
         <label>Accept Terms and Conditions</label>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-  <div id="form">
-    <p>Name: {{ name }}</p>
-    <p>Email: {{ email }}</p>
-    <p>Password: {{ password }}</p>
-    <p>Gender: {{ gender }}</p>
-    <p>Terms and Conditions: {{ terms }}</p>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </div>
- </div>
+
+  <Foot />
 </template>
 
 <script>
+import Foot from "@/components/Foot.vue";
 export default {
   data() {
     return {
@@ -70,24 +70,43 @@ export default {
       email: "",
       password: "",
       gender: "All",
-      terms: false
+      terms: false,
     };
+  },
+  components: {
+    Foot,
   },
 };
 </script>
 <style scoped>
-#Name-Email{
+h1{
+  margin-top: 40px;
+}
+#Form-edit {
+  background-color: rgba(213, 181, 93, 0.888);
+  width: 600px;
+  margin: auto;
+  border-radius: 30px;
+}
+#Name-Email {
   padding: 30px 10px;
 }
-#Name-Email input{
+#Name-Email input {
   margin: 0 10px;
 }
-#wig-logo img{
-  height: 200px;
-  width: 200px;
+#wig-logo img {
+  height: 20px;
+  width: 130px;
 }
-#contact-form{
+.image {
+  width: 500px !important;
+}
+#contact-form {
   text-align: center;
-  margin-left:15% ;
+  margin-bottom: 50px;
+}
+#mes-area {
+  width: 500px;
+  margin: auto;
 }
 </style>

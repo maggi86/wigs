@@ -10,6 +10,8 @@
       <option value="5 stars">5</option>
       <option value="4 stars">4</option>
     </select>
+    <br>
+    <br>
     <div v-if="wigs">
       <div class="row">
         <div class="col-12 col-md-4" v-for="wig in wigs" :key="wig.id">
@@ -152,7 +154,7 @@ p {
   transition: 0.5s;
 }
 .card-wrapper:hover .user-pic {
-  margin-top: 50px;
+  margin-top: 70px;
   height: 170px;
   width: 160px;
   transition: 0.8s;

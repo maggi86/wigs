@@ -2,22 +2,26 @@
 <div class="container">
 <h2> Registration  to join the Wig Nation </h2>
 <form @submit.prevent="register({username, email, password, password2, errors})">
-<input type="text"  placeholder="Please enter username " v-model="username" >
+<input type="text"  placeholder="Please enter username " v-model="username"  required>
 <br>
-<input type="text"   v-model="email" placeholder="please  enter email" >
-
 <br>
-<input type="password"   v-model="password" placeholder="please enter password" >
-
+<input type="text"   v-model="email" placeholder="please  enter email"  required>
 <br>
-<input type="password" v-model="password2"  placeholder="please confirm password" >
-
+<br>
+<input type="password"   v-model="password" placeholder="please enter password" required >
+<br>
+<br>
+<input type="password" v-model="password2"  placeholder="please confirm password" required >
+<br>
 <br>
 <div>
     <button class="btn form-control"> register</button>
 </div>
 </form>
 </div>
+    <footer id="footer">
+    <p>@copy 2022 WigNation copyright</p>
+  </footer>
 </template>
 
 <script>
@@ -53,18 +57,36 @@ data() {
 
 <style scoped>
 .container{
-    box-shadow: 0  15px 30px rgb(02,12,12);
-background-color: aliceblue;
-    width:350px;
+    box-shadow: 0  15px 30px #a35203;
+ background-color:rgba(227, 207, 155, 0.888);
+    width:450px;
     padding: 30px 40px;
     position:absolute;
     transform: translate(-50%,-50%);
     left:150%;
     top:50%;
     animation: show 3s linear forwards;
+    height: 60vh;
 
 }
 
+
+#footer {
+ background-color:rgba(227, 207, 155, 0.888);
+  width: 100%;
+  height: 70px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+#footer p {
+  background-color:rgba(202, 178, 116, 0.888);
+}
 
 @keyframes show {
     from {
@@ -75,7 +97,7 @@ background-color: aliceblue;
     }
 }
 .btn{
-    background-color: aqua;
+    background-color:burlywood;
     size: 40px;
 }
 </style>

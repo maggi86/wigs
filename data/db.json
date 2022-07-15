@@ -12,6 +12,12 @@
       "email": "j",
       "password": "j",
       "id": 2
+    },
+    {
+      "username": "Pop",
+      "email": "Pop@gmail.com",
+      "password": "Pop",
+      "id": 3
     }
   ],
   "wigs": [
@@ -24,7 +30,7 @@
       "lifespan": "2 months",
       "processing time": "3 days",
       "shipping time": "5-6 business days",
-      "rating": "5 stars",
+      "rating": "5stars",
       "hair": "hair piece",
       "category": "hair piece"
     },

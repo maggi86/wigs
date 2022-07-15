@@ -23,15 +23,17 @@
   </section> -->
 
   <!-- <Foot class="footer" /> -->
+  <Foot />
 </template>
 
 <script>
-import Foot from "../components/Foot.vue";
+
+import Foot from "@/components/Foot.vue";
 // import About from "../views/About.vue";
 
 export default {
   components: {
-    // Foot,
+    Foot,
     // About,
   },
   computed: {

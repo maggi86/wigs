@@ -48,89 +48,77 @@
       </div>
 
       <div class="team">
-        <h1>
-          Meet the team
-        </h1>
-
+        <h1>Meet the team</h1>
 
         <div class="card">
           <div class="circle-container">
-            <img
-              class="pfp"
-              src="../Wig-Images/Liam.png"
-            />
+            <img class="pfp" src="../Wig-Images/Liam.png" />
           </div>
           <h2>Liam Engel</h2>
-          <h4>Assistant</h4>
+          <h4>Creative Director</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            I am a good collaborator all around the office, everyone displays
+            there ideas on the table and from there it is up to me to make sure
+            that what they asked for is what they get, and that the team is
+            satisfied
           </p>
         </div>
 
-      
         <div class="card">
           <div class="circle-container">
-            <img
-              class="pfp Rpdf"
-              src="../Wig-Images/Raees(2).png"
-            />
+            <img class="pfp Rpdf" src="../Wig-Images/Raees(2).png" />
           </div>
           <h2>Ra'ees Benny</h2>
-          <h4>Assistant</h4>
+          <h4>Backend-Developer</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            All data related issues and
+            functions all come go me. I am the guy that works behind the
+            curtains and makes sure that all functionality is working and that
+            the servers run smoothly
           </p>
         </div>
 
         <div class="card">
           <div class="circle-container">
-            <img
-              class="pfp"
-              src="../Wig-Images/Micheala(1).png"
-            />
+            <img class="pfp" src="../Wig-Images/Micheala(1).png" />
           </div>
           <h2>Micheala Ward</h2>
-          <h4>Stylist</h4>
+          <h4>Co - Manager</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+          I make sure that all operations of the team is running smoothly and that everyone is doing what is correct. I also am involved with both back-end and front-end aspects of the project
           </p>
         </div>
 
         <div class="card">
           <div class="circle-container">
-            <img
-              class="pfp"
-              src="../Wig-Images/Meagan(2).png"
-            />
+            <img class="pfp" src="../Wig-Images/Meagan(2).png" />
           </div>
           <h2>Meagan Williams</h2>
           <h4>Manager</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
+            My role in the project is to assign everyone to a specific job that meets there skill. I also make sure that everyone knows exactly what they are doing, and at the end of the production faze I inspect and make sure that the project meets the clients standards and their expectations
           </p>
         </div>
       </div>
     </div>
   </section>
+  <Foot />
 </template>
 
 <script>
-export default {};
+import Foot from "@/components/Foot.vue";
+export default {
+  components:{
+    Foot
+  }
+};
 </script>
 
 <style>
 .allabt {
-  background: 
-      linear-gradient(
-      rgba(224, 202, 130, 0.46),
-      #a35203
-    ),
-    /* bottom, image */ 
-    url(../Wig-Images/peakpx.jpg);
+  background: linear-gradient(rgba(224, 202, 130, 0.46), #a35203),
+    /* bottom, image */ url(../Wig-Images/peakpx.jpg);
+  background-attachment: fixed;
 }
 
 .header {
@@ -149,8 +137,8 @@ export default {};
   border-radius: 50%;
   object-fit: cover;
 }
-.Rpdf{
-   object-position: 0px 1px;
+.Rpdf {
+  object-position: 0px 1px;
 }
 
 .container h1 {
@@ -161,7 +149,7 @@ export default {};
   padding: 5% 0;
   width: 100%;
   height: 80%;
-  background: linear-gradient(rgba(0, 42, 255, 0.46), #a35203);
+  background: linear-gradient(rgba(227, 207, 155, 0.888) , #a35203);
 }
 
 .about .left {
@@ -181,7 +169,7 @@ export default {};
 
 .about .left h1 {
   text-align: center;
-  color: #1e1efffc;
+  color: burlywood;
   margin: 0 0 10px 0;
   text-shadow: 2px 2px #ff0000;
 }
@@ -196,7 +184,7 @@ export default {};
   padding: 5% 0;
   width: 100%;
   height: auto;
-  background: linear-gradient(rgba(0, 42, 255, 0.46), #a35203);
+  background: linear-gradient( #a35203);
 }
 .mission .right {
   padding: 2% 0;
@@ -215,7 +203,7 @@ export default {};
 }
 .mission .right h1 {
   text-align: center;
-  color: #1e1efffc;
+  color: burlywood;
   margin: 0 0 10px 0;
   text-shadow: 2px 2px #ff0000;
 }
@@ -234,6 +222,7 @@ export default {};
 .team h1 {
   text-align: center;
   margin: 0 0 10px 0;
+  color: burlywood;
   text-shadow: 2px 2px #ff0000;
 }
 
@@ -265,7 +254,7 @@ export default {};
   margin: 0;
   font-size: 60px;
 }
-.circle-container img{
+.circle-container img {
   height: 250px;
   width: 250px;
 }

@@ -1,25 +1,25 @@
 <template>
   <div id="add-wig-btn">
     <!-- Button trigger modal -->
-  <button
-    type="button"
-    class="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
-  >
-    Add Wig
-  </button>
-  </div>
-  <button @click="sortPrice">
-    sort by price
+    <br />
+    <button
+      type="button"
+      class="btn"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Add Wig
     </button>
-    <input type="text" id="" v-model="search" placeholder="Search....">
-    <select name="" id="" v-model="rating">
-      <option value="All">All</option>
-      <option value="5 stars">5</option>
-      <option value="4 stars">4</option>
-    </select>
-
+  </div>
+  <button @click="sortPrice">sort by price</button>
+  <input type="text" id="" v-model="search" placeholder="Search...." />
+  <select name="" id="" v-model="rating">
+    <option value="All">All star's</option>
+    <option value="5 stars">5 star</option>
+    <option value="4 stars">4 star</option>
+  </select>
+  <br />
+  <br />
   <!-- Modal -->
   <div
     class="modal fade"
@@ -74,61 +74,161 @@
   </div>
 
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Image</th>
-          <th>Wig Name</th>
-          <th>Wig Price</th>
-          <th>Wig Description</th>
-          <th>Wig Lifespan</th>
-          <th>Wig Processing Time</th>
-          <th>Wig Shipping Time</th>
-          <th>Wig Rating</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody v-if="wigs">
-        <tr v-for="wig in wigs" :key="wig.id">
-          <td>{{ wig.id }}</td>
-          <td><img :src="wig.images" alt="" class="img-fuild" /></td>
-          <td>{{ wig.name }}</td>
-          <td>R {{ wig.price }}</td>
-          <td>{{ wig.description }}</td>
-          <td>{{ wig.lifespan }}</td>
-          <td>{{ wig["processing time"] }}</td>
-          <td>{{ wig["shipping time"] }}</td>
-          <td>{{ wig.rating }}</td>
-          <td>
-            <!-- <i
-              @click="$store.commit('deleteWig', wig.id)"
-              class="bi bi-trash-fill"
-            ></i> -->
-            <i
-              @click="$store.dispatch('deleteWig', wig.id)"
-              class="bi bi-trash-fill"
-            ></i>
-          </td>
-        </tr>
-      </tbody>
-      <div v-else><h1>No data to display in Admin</h1></div>
-    </table>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Wig Name</th>
+            <th>Wig Price</th>
+            <th>Wig Description</th>
+            <th>Wig Lifespan</th>
+            <th>Wig Processing Time</th>
+            <th>Wig Shipping Time</th>
+            <th>Wig Rating</th>
+            <th>Delete</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody v-if="wigs">
+          <tr v-for="wig in wigs" :key="wig.id">
+            <td>{{ wig.id }}</td>
+            <td><img :src="wig.images" alt="" class="img-fuild" /></td>
+            <td>{{ wig.name }}</td>
+            <td>R {{ wig.price }}</td>
+            <td>{{ wig.description }}</td>
+            <td>{{ wig.lifespan }}</td>
+            <td>{{ wig["processing time"] }}</td>
+            <td>{{ wig["shipping time"] }}</td>
+            <td>{{ wig.rating }}</td>
+            <td>
+              <i
+                @click="$store.dispatch('deleteWig', wig.id)"
+                class="bi bi-trash-fill"
+              ></i>
+            </td>
+            <td>
+              <div id="add-wig-btn">
+                <!-- Button trigger modal -->
+                <br />
+                <button
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  :data-bs-target="'#exampleModal' + wig.id"
+                >
+                  <i class="bi bi-pencil-square">Edit Wig</i>
+                </button>
+                <div
+                  class="modal fade"
+                  :id="'exampleModal' + wig.id"
+                  tabindex="-1"
+                  aria-labelledby="exampleModal1Label"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModal1Label">
+                          Lets edit your wig
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <div>
+                          <label for="name">Name: </label>
+                          <input
+                            class="form-control mb-3"
+                            type="name"
+                            maxlength="20"
+                            required
+                            id="add-Name"
+                            v-model="wig.name"
+                          />
+                        </div>
+                        <div>
+                          <label for="price">Price: </label>
+                          <input
+                            class="form-control mb-3"
+                            type="number"
+                            required
+                            id="add-Price"
+                            v-model="wig.price"
+                          />
+                        </div>
+                        <div>
+                          <label for="name">Life Span: </label>
+                          <input
+                            class="form-control mb-3"
+                            type="text"
+                            required
+                            id="add-LifeSpan"
+                            v-model="wig['lifespan']"
+                          />
+                        </div>
+                        <div>
+                          <label for="name">Rating: </label>
+                          <input
+                            class="form-control mb-3"
+                            type="text"
+                            required
+                            id="add-Rating"
+                            v-model="wig.rating"
+                          />
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          id="closeBtn"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button
+                          type="button"
+                          id="addWig-Btn"
+                          data-bs-dismiss="modal"
+                          @click="$store.dispatch('addWig')"
+                        >
+                          <i
+                            class="bi bi-pencil-square"
+                            @click="$store.dispatch('updateWigs')"
+                          >
+                          </i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <div v-else><h1>No data to display in Admin</h1></div>
+      </table>
+    </div>
   </body>
 </template>
 <script>
 export default {
-  data(){
-    return{
+  data() {
+    return {
       search: "",
-      rating:'All'
-    }
+      rating: "All",
+    };
   },
-    methods:{
-      sortPrice(){
-    this.$store.commit("sortPrice");
-      }
+  methods: {
+    sortPrice() {
+      this.$store.commit("sortPrice");
     },
+  },
   mounted() {
     this.$store.dispatch("fetchAllWigs");
   },
@@ -137,18 +237,17 @@ export default {
     //   return this.$store.state.wigs;
     // },
     wigs() {
-      return this.$store.state.wigs?.filter(wigs=> {
+      return this.$store.state.wigs?.filter((wigs) => {
         let isMatch = true;
-        if(!wigs.name?.toLowerCase().includes(this.search.toLowerCase())){
+        if (!wigs.name?.toLowerCase().includes(this.search.toLowerCase())) {
           isMatch = false;
         }
-        if(this.rating !== "All" && this.rating !== wigs.rating){
+        if (this.rating !== "All" && this.rating !== wigs.rating) {
           isMatch = false;
         }
         return isMatch;
       });
     },
-
   },
 };
 </script>
@@ -157,29 +256,31 @@ table,
 th,
 td {
   border: 1px solid black;
+
 }
 table {
   text-align: center;
   align-items: center;
   border: 2px solid black;
   border-collapse: collapse;
-  color: white;
+  color: black;
   margin: 0 10px;
   background: linear-gradient(
-    /* 100deg, */
-    100deg,
+    /* 100deg, */ 100deg,
     /* yellow 0%,
     brown 25%,
     purple 50%,
     green 75%,
     orange 100% */
-    rgba(57, 53, 53, 0.46),
-      #a35203
+      rgba(57, 53, 53, 0.46),
+    #a35203
   );
   /* width: 100vw; */
 }
 td {
   padding: 10px;
+  color: white;
+  font-size: 20px;
 }
 img {
   border-radius: 30px;
@@ -194,7 +295,7 @@ img {
   border-radius: 30px;
   font-size: 20px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   /* Force table to not be like tables anymore */
   table,
   thead,
@@ -204,10 +305,10 @@ img {
   tr {
     display: block;
   }
-  table{
+  table {
     text-align: center;
   }
-  img{
+  img {
     border-radius: 10px;
     width: 70px;
     height: 70px;
@@ -244,7 +345,7 @@ img {
     white-space: nowrap;
   }
 }
-#add-wig-btn{
+#add-wig-btn {
   margin: 40px 0 7px 0;
 }
 </style>

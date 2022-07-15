@@ -17,7 +17,7 @@
     </div>
   </nav> -->
   <div v-if="user">
-  <div class="navbar navbar-expand-lg">
+  <div class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <button
         class="navbar-toggler"
@@ -51,11 +51,17 @@
           <li class="nav-item">
             <router-link to="/admin" class="nav-link active">Admin</router-link>
           </li>
+          <li>
+             <!-- <h2> hello {{username}}</h2>  -->
+          </li>
+          <li class="nav-item">
+              <button class="btn" @click="logout">Logout</button>
+          </li>
         </ul>
       </div>
     </div>
     </div>
-  <button class="btn btn-danger" @click="logout">Logout</button>
+
     </div>
     <div v-else>
       <ul class="">
@@ -96,8 +102,8 @@ function scrollFunction() {
 
 <style scoped>
 .navbar {
-  background-color: rgb(255, 225, 225);
-  opacity: 80%;
+    background-color: transparent;
+  /* opacity: 80%; */
   top: 0;
   width: 100%;
   height: 35px;
@@ -116,13 +122,18 @@ function scrollFunction() {
   font-size: 17px;
   transition: transform 0.5s;
 }
+.navbar-collapse{
+  justify-content: center;
+}
 
  .navbar a:hover {
   transform: scale(1.3);
   text-decoration: underline;
-  text-decoration-color: #00ffff;
+  text-decoration-color: rgba(227, 207, 155, 0.888);
 } 
-
+.navbar-nav{
+    background-color: rgba(227, 207, 155, 0.888);
+}
 ul{
   display: flex;  
   justify-content: center;
@@ -134,5 +145,9 @@ ul{
 ul li{
   list-style: none;
   padding: 0 30px;
+}
+
+.btn{
+  margin-right: 20px;
 }
 </style>
