@@ -1,13 +1,26 @@
 <template>
   <body>
     <h1>Click on Image for more details</h1>
-    <button @click="sortPrice">sort by price</button>
-    <input type="text" id="" v-model="search" placeholder="Search...." />
-    <select name="" id="" v-model="rating">
-      <option value="All">All</option>
-      <option value="5 stars">5</option>
-      <option value="4 stars">4</option>
-    </select>
+    <ul>
+      <li>
+        <button @click="sortPrice" id="sort-price">sort by price</button>
+      </li>
+      <li>
+        <input
+          type="text"
+          id="search"
+          v-model="search"
+          placeholder="Search...."
+        />
+      </li>
+      <li>
+        <select name="" id="select-wig-rating" v-model="rating">
+          <option class="option-wig-rating" value="All">All</option>
+          <option class="option-wig-rating" value="5 stars">5</option>
+          <option class="option-wig-rating" value="4 stars">4</option>
+        </select>
+      </li>
+    </ul>
     <br />
     <br />
     <div v-if="wigs">
@@ -49,9 +62,15 @@
     </div>
     <div v-else>Loading...</div>
   </body>
+  <AboveFooter />
 </template>
 <script>
+import AboveFooter from "../components/AboveFooter.vue";
+
 export default {
+  components: {
+    AboveFooter,
+  },
   data() {
     return {
       search: "",
@@ -207,5 +226,32 @@ p {
   top: 170px;
   text-align: center;
   /* margin-right: 1; */
+}
+#sort-price {
+  margin: 10px 0 10px 0;
+  border-radius: 30px;
+  background-color: rgba(202, 178, 116, 0.888);
+  transition: 0.5s;
+  padding: 10px;
+}
+#sort-price:hover {
+  transform: scale(1.2);
+}
+#search {
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+#select-wig-rating{
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+li {
+  padding: 0 30px;
 }
 </style>

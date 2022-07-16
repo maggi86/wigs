@@ -11,13 +11,26 @@
       Add Wig
     </button>
   </div>
-  <button @click="sortPrice">sort by price</button>
-  <input type="text" id="" v-model="search" placeholder="Search...." />
-  <select name="" id="" v-model="rating">
-    <option value="All">All star's</option>
-    <option value="5 stars">5 star</option>
-    <option value="4 stars">4 star</option>
-  </select>
+  <ul>
+    <li>
+      <button @click="sortPrice" id="sort-price">sort by price</button>
+    </li>
+    <li>
+      <input
+        type="text"
+        id="search"
+        v-model="search"
+        placeholder="Search...."
+      />
+    </li>
+    <li>
+      <select name="" id="select-wig-rating" v-model="rating">
+        <option value="All">All star's</option>
+        <option value="5 stars">5 star</option>
+        <option value="4 stars">4 star</option>
+      </select>
+    </li>
+  </ul>
   <br />
   <br />
   <!-- Modal -->
@@ -346,5 +359,32 @@ img {
 }
 #add-wig-btn {
   margin: 40px 0 7px 0;
+}
+#sort-price {
+  margin: 10px 0 10px 0;
+  border-radius: 30px;
+  background-color: rgba(202, 178, 116, 0.888);
+  transition: 0.5s;
+  padding: 10px;
+}
+#sort-price:hover {
+  transform: scale(1.2);
+}
+#search {
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+#select-wig-rating {
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+li {
+  padding: 0 30px;
 }
 </style>

@@ -108,14 +108,18 @@
       </div>
     </div>
   </section>
+  <AboveFooter/>  
   <Foot />
 </template>
 
 <script>
+import AboveFooter from "../components/AboveFooter.vue";
 import Foot from "@/components/Foot.vue";
+
 export default {
   components: {
     Foot,
+    AboveFooter
   },
 };
 </script>

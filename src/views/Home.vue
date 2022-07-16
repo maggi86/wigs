@@ -1,21 +1,21 @@
 <template>
   <div class="">
     <section class="home vh-100">
-    <div class="logo">
-      <img src="../Wig-Images/WigNation-Logo.png" />
-      <div class="text-header">
-        <p>Beauty is our <span class="sub-heading">Duty</span></p>
+      <div class="logo">
+        <img src="../Wig-Images/WigNation-Logo.png" />
+        <div class="text-header">
+          <p>Beauty is our <span class="sub-heading">Duty</span></p>
+        </div>
       </div>
-    </div>
-    <div id="link-btns">
-      <router-link :to="{ name: 'Wigs' }">
-        <button id="button">View Our products</button>
-      </router-link>
-      <router-link :to="{ name: 'about' }">
-        <button id="button">About Us</button>
-      </router-link>
-    </div>
-  </section>
+      <div id="link-btns">
+        <router-link :to="{ name: 'Wigs' }">
+          <button id="button">View Our products</button>
+        </router-link>
+        <router-link :to="{ name: 'about' }">
+          <button id="button">About Us</button>
+        </router-link>
+      </div>
+    </section>
   </div>
 
   <!-- <section id="about">
@@ -23,17 +23,19 @@
   </section> -->
 
   <!-- <Foot class="footer" /> -->
+  <AboveFooter/>
   <Foot />
 </template>
 
 <script>
-
+import AboveFooter from "../components/AboveFooter.vue";
 import Foot from "@/components/Foot.vue";
 // import About from "../views/About.vue";
 
 export default {
   components: {
     Foot,
+    AboveFooter
     // About,
   },
   computed: {
@@ -45,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid{
+.container-fluid {
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
@@ -57,12 +59,10 @@ export default {
       rgba(57, 53, 53, 0.46),
       #a35203
     ),
-    /* bottom, image */ 
-    
-    url(../assets/backgorund.jpeg);
+    /* bottom, image */ url(../assets/backgorund.jpeg);
   background-position: center;
   background-size: cover;
-  background-repeat:no-repeat ;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 .logo {
@@ -123,7 +123,7 @@ p {
     left: 32vh;
     font-size: 20px;
   }
-  p{
+  p {
     margin-right: 40%;
     font-size: 30px;
   }
@@ -134,11 +134,9 @@ p {
     left: 32vh;
     font-size: 20px;
   }
-  p{
+  p {
     margin-right: 40%;
     font-size: 30px;
   }
 }
-
-
 </style>

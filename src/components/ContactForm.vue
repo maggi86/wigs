@@ -80,7 +80,7 @@ export default {
 </script>
 <style scoped>
 h1{
-  margin-top: 40px;
+  margin-top: 50px;
 }
 #Form-edit {
   background-color: rgba(213, 181, 93, 0.888);
