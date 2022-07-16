@@ -1,17 +1,15 @@
 <template>
   <body>
     <h1>Click on Image for more details</h1>
-    <button @click="sortPrice">
-    sort by price
-    </button>
-    <input type="text" id="" v-model="search" placeholder="Search....">
+    <button @click="sortPrice">sort by price</button>
+    <input type="text" id="" v-model="search" placeholder="Search...." />
     <select name="" id="" v-model="rating">
       <option value="All">All</option>
       <option value="5 stars">5</option>
       <option value="4 stars">4</option>
     </select>
-    <br>
-    <br>
+    <br />
+    <br />
     <div v-if="wigs">
       <div class="row">
         <div class="col-12 col-md-4" v-for="wig in wigs" :key="wig.id">
@@ -39,10 +37,10 @@
                   <p>Rating</p>
                   <h3>{{ wig.rating }}</h3>
                 </div>
-                <div class="wig-lifespan">
+                <!-- <div class="wig-lifespan">
                   <p>Life Span</p>
                   <h3>{{ wig.lifespan }}</h3>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -54,37 +52,36 @@
 </template>
 <script>
 export default {
-  data(){
-    return{
+  data() {
+    return {
       search: "",
-      rating:'All'
-    }
+      rating: "All",
+    };
   },
   mounted() {
     this.$store.dispatch("fetchAllWigs");
   },
-  methods:{
-      sortPrice(){
-    this.$store.commit("sortPrice");
-      }
+  methods: {
+    sortPrice() {
+      this.$store.commit("sortPrice");
     },
+  },
   computed: {
     // wigs() {
     //   return this.$store.state.wigs;
     // },
     wigs() {
-      return this.$store.state.wigs?.filter(wigs=> {
-        let isMatch = true; 
-        if(!wigs.name?.toLowerCase().includes(this.search.toLowerCase())){
+      return this.$store.state.wigs?.filter((wigs) => {
+        let isMatch = true;
+        if (!wigs.name?.toLowerCase().includes(this.search.toLowerCase())) {
           isMatch = false;
         }
-        if(this.rating !== "All" && this.rating !== wigs.rating){
+        if (this.rating !== "All" && this.rating !== wigs.rating) {
           isMatch = false;
         }
         return isMatch;
       });
     },
-
   },
 };
 </script>
@@ -102,24 +99,25 @@ export default {
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(90deg, rgba(57, 53, 53, 0.46), #a35203);
+  /* background: grey; */
 }
 h1 {
   padding: 50px;
 }
 h3 {
-  font-size: larger;
+  font-size: 25px;
   /* color: black; */
-  color: white;
-    text-decoration: underline; 
+  color: black;
+  /* text-decoration: underline;  */
 }
 h4 {
   font-size: larger;
   /* color: black; */
-  color: white;
+  color: black;
 }
 p {
-  color: white;
-  text-decoration: underline; 
+  color: black;
+  text-decoration: underline;
 }
 .wigCard {
   display: flex;
@@ -139,7 +137,9 @@ p {
   position: relative;
   height: 180px;
   width: 300px;
-  background: linear-gradient(100deg, rgba(57, 53, 53, 0.46), #a35203);
+  /* background: linear-gradient(100deg, rgba(57, 53, 53, 0.46), #a35203); */
+  background-color: rgba(227, 207, 155, 0.888);
+
   border-radius: 20px;
   display: flex;
   flex-direction: column;

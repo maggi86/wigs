@@ -65,9 +65,8 @@ export default createStore({
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
-      })
-      then((res) => res.json())
-      .then(() => context.dispatch("fetchAllWigs"));
+      });
+      then((res) => res.json()).then(() => context.dispatch("fetchAllWigs"));
     },
     deleteWig: async (context, id) => {
       fetch(`http://localhost:3000/wigs/` + id, {
@@ -95,7 +94,7 @@ export default createStore({
     },
     register: async (context, payload) => {
       const { username, email, password } = payload;
-      let response = await fetch("  http://localhost:3000/users", {
+      let response = await fetch("http://localhost:3000/users", {
         method: "POST",
         body: JSON.stringify({
           username: username,

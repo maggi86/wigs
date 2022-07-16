@@ -82,12 +82,12 @@ export default {
   font-size: 30px;
   font-family: "Acme", sans-serif;
   text-decoration: solid;
-  margin-right: 13%;
+  margin-right: 6%;
   transition: 0.8s;
   border-radius: 20px;
 }
 #link-btns {
-  margin: 100px 0px 0 100px;
+  margin: 100px 0px 0 30px;
 }
 #button:hover {
   transform: scale(1.1);
@@ -103,7 +103,7 @@ export default {
   /* margin-right: 70px; */
   /* font-size: 90px; */
   top: 380px;
-  left: 550px;
+  left: 610px;
   /* padding: 0 0 0 0; */
   color: rgb(255, 255, 255);
   font-family: "Acme", sans-serif;

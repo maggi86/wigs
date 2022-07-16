@@ -6,6 +6,7 @@
         <div class="left">
           <h1>About Us</h1>
           <hr />
+          <p id="web-title">WigNation</p>
           <p>
             For twenty years now, I have dedicated my life to beauty, to
             discovering my inner beauty and making my inner self shine, and to
@@ -71,10 +72,9 @@
           <h2>Ra'ees Benny</h2>
           <h4>Backend-Developer</h4>
           <p>
-            All data related issues and
-            functions all come go me. I am the guy that works behind the
-            curtains and makes sure that all functionality is working and that
-            the servers run smoothly
+            All data related issues and functions all come go me. I am the guy
+            that works behind the curtains and makes sure that all functionality
+            is working and that the servers run smoothly
           </p>
         </div>
 
@@ -85,7 +85,9 @@
           <h2>Micheala Ward</h2>
           <h4>Co - Manager</h4>
           <p>
-          I make sure that all operations of the team is running smoothly and that everyone is doing what is correct. I also am involved with both back-end and front-end aspects of the project
+            I make sure that all operations of the team is running smoothly and
+            that everyone is doing what is correct. I also am involved with both
+            back-end and front-end aspects of the project
           </p>
         </div>
 
@@ -96,7 +98,11 @@
           <h2>Meagan Williams</h2>
           <h4>Manager</h4>
           <p>
-            My role in the project is to assign everyone to a specific job that meets there skill. I also make sure that everyone knows exactly what they are doing, and at the end of the production faze I inspect and make sure that the project meets the clients standards and their expectations
+            My role in the project is to assign everyone to a specific job that
+            meets there skill. I also make sure that everyone knows exactly what
+            they are doing, and at the end of the production faze I inspect and
+            make sure that the project meets the clients standards and their
+            expectations
           </p>
         </div>
       </div>
@@ -108,17 +114,26 @@
 <script>
 import Foot from "@/components/Foot.vue";
 export default {
-  components:{
-    Foot
-  }
+  components: {
+    Foot,
+  },
 };
 </script>
 
 <style>
+/* Font Pacifico */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+#web-title {
+  font-family: "Pacifico", cursive;
+  font-size: 60px;
+}
 .allabt {
   background: linear-gradient(rgba(224, 202, 130, 0.46), #a35203),
-    /* bottom, image */ url(../Wig-Images/peakpx.jpg);
+    url(../Wig-Images/peakpx.jpg);
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
 }
 
 .header {
@@ -127,6 +142,7 @@ export default {
   background-color: rgb(255, 244, 30);
   background-image: url("../Wig-Images/Ks8NpG_headerPage.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .container {
@@ -149,7 +165,7 @@ export default {
   padding: 5% 0;
   width: 100%;
   height: 80%;
-  background: linear-gradient(rgba(227, 207, 155, 0.888) , #a35203);
+  /* background: linear-gradient(rgba(227, 207, 155, 0.888), #a35203); */
 }
 
 .about .left {
@@ -184,7 +200,7 @@ export default {
   padding: 5% 0;
   width: 100%;
   height: auto;
-  background: linear-gradient( #a35203);
+  background: linear-gradient(#a35203);
 }
 .mission .right {
   padding: 2% 0;
