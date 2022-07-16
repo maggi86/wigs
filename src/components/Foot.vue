@@ -1,6 +1,6 @@
 <template>
   <footer id="footer">
-    <p>@copy 2022 WigNation copyright</p>
+    <p>&copy 2022 WigNation copyright</p>
   </footer>
 </template>
 <style scoped>
