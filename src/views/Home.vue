@@ -86,6 +86,7 @@ export default {
   transition: 0.8s;
   border-radius: 20px;
 }
+
 #link-btns {
   margin: 100px 0px 0 100px;
 }
@@ -117,7 +118,7 @@ p {
 }
 
 /* Media Query */
-@media only screen and (max-width: 540px) {
+@media screen and (max-width: 540px) {
   .text-header {
     display: flex;
     left: 32vh;
@@ -128,7 +129,7 @@ p {
     font-size: 30px;
   }
 }
-@media only screen and (max-width: 930px) {
+@media screen and (max-width: 930px) {
   .text-header {
     display: flex;
     left: 32vh;
@@ -139,6 +140,12 @@ p {
     font-size: 30px;
   }
 }
-
+@media screen and (max-width: 380px){
+img{
+  margin-left:50px;
+  height:250px;
+  width:auto;
+}
+}
 
 </style>
