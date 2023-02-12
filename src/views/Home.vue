@@ -142,9 +142,12 @@ p {
 }
 @media screen and (max-width: 380px){
 img{
-  margin-left:50px;
-  height:250px;
+  padding-left:0px;
+  height:280px;
   width:auto;
+}
+logo{
+  padding-right:50px;
 }
 }
 
